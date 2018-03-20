@@ -1,18 +1,18 @@
-Plán k druhému projektu k pøedmetu IVS -- Kalkulaèka
+PlÃ¡n k druhÃ©mu projektu k pÅ™edmetu IVS -- KalkulaÄka
 
-Vıvojové prostøedí: Visual Studio
-Programovací jazyk: C#
+VÃ½vojovÃ© prostÅ™edÃ­: Visual Studio
+ProgramovacÃ­ jazyk: C#
 GUI: WinForms
-Komunikaèní kanály: Discord
-Repozitáø: GitHub https://github.com/MasterPK/FIT_IVS_Projekt_2.git (veøejnı)
+KomunikaÄnÃ­ kanÃ¡ly: Discord
+RepozitÃ¡Å™: GitHub https://github.com/MasterPK/FIT_IVS_Projekt_2.git (veÅ™ejnÃ½)
 
-Zpùsob komentování: Doxygen
-Jazyk komentáøù: Èeština
+ZpÅ¯sob komentovÃ¡nÃ­: Doxygen
+Jazyk komentÃ¡Å™Å¯: ÄŒeÅ¡tina
 
-Plán:
+PlÃ¡n:
 
-25.3.2018 - Testy matematické knihovny(xhorky28)
-1.3.2018 - Matematická knihovna
-1.3.2018 - Návrh GUI
+25.3.2018 - Testy matematickÃ© knihovny(xhorky28)
+1.3.2018 - MatematickÃ¡ knihovna
+1.3.2018 - NÃ¡vrh GUI(xfucik08)
 15.3.2018 - Implemetace
 22.3.2018 - 
