@@ -12,7 +12,9 @@ Jazyk komentářů: Čeština
 Plán:
 
 25.3.2018 - Testy matematické knihovny(xhorky28)
-1.3.2018 - Matematická knihovna
+1.3.2018 - Matematická knihovna(xkrehl04)
 1.3.2018 - Návrh GUI(xfucik08)
-15.3.2018 - Implemetace
-22.3.2018 - 
+15.3.2018 - Implemetace(xklobu03,xhorky28,xkrehl04,xfucik08)
+20.3.2018 - Instalátor(xhorky28)
+22.3.2018 - Testování aplikace(xkrehl04)
+22.3.2018 - Dokumentace(xfucik08)
