@@ -11,4 +11,8 @@ Jazyk komentáøù: Èeština
 
 Plán:
 
-25.3.2018 - Testy matematick knihovny(xhorky28)
+25.3.2018 - Testy matematické knihovny(xhorky28)
+1.3.2018 - Matematická knihovna
+1.3.2018 - Návrh GUI
+15.3.2018 - Implemetace
+22.3.2018 - 
