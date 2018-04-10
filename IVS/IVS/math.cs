@@ -87,7 +87,7 @@ namespace MathLibrary
 		/// <summary>
 		/// Vypocita mocninu vstupniho cisla x umocneneho prirozenym cislem n
 		/// </summary>
-		/// <param name="x">Vstup</param>
+		/// <param name="x">Zaklad</param>
 		/// <param name="n">Mocnitel</param>
 		/// <exception cref="ArgumentException">N musi byt prirozene cislo</exception>
 		/// <returns>Vraci N-tou mocninu vstupu</returns>
@@ -105,11 +105,36 @@ namespace MathLibrary
 			}
 			return vysledek;
 		}
-		public static double Odmocnina(int x, int n)
+		/// <summary>
+		/// Pocita N-tou odmocninu pomoci kraceni mezi, presnost urcuje pocet iteraci
+		/// </summary>
+		/// <param name="x">Zaklad</param>
+		/// <param name="n">N-ta odmocnina</param>
+		/// <param name="iter">Iteraci</param>
+		/// <returns>Vraci odmocninu</returns>
+		public static double Odmocnina(double x, int n, int iter)
 		{
-			if (Test_Int(n) == false || n < 0 || Test_Int(x)==false || x<0) {
+			if (Test_Int(n) == false || n < 0 || x<0) {
 				throw new ArgumentException();
 			}
+			double horni_mez = x;
+			double dolni_mez = 0;
+
+			double vysledek = x / 2;
+			double k = math.Umocnit(vysledek, n);
+			for (int i = 0; i < iter; i++) {
+				if (k > x) {
+					horni_mez = vysledek;
+					vysledek = vysledek - ((horni_mez - dolni_mez) / 2);
+				}
+				else {
+					dolni_mez = vysledek;
+					vysledek = vysledek + ((horni_mez - dolni_mez) / 2);
+				}
+				k = math.Umocnit(vysledek, n);
+			}
+			return vysledek;
+
 		}
 	}
 }
