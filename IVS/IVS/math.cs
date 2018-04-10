@@ -84,6 +84,13 @@ namespace MathLibrary
 			}
 			return f;
 		}
+		/// <summary>
+		/// Vypocita mocninu vstupniho cisla x umocneneho prirozenym cislem n
+		/// </summary>
+		/// <param name="x">Vstup</param>
+		/// <param name="n">Mocnitel</param>
+		/// <exception cref="ArgumentException">N musi byt prirozene cislo</exception>
+		/// <returns>Vraci N-tou mocninu vstupu</returns>
 		public static double Umocnit(double x, double n)
 		{
 			if (Test_Int(n) == false && n >= 0) {
@@ -97,9 +104,6 @@ namespace MathLibrary
 				vysledek = math.Nasob(vysledek,x);
 			}
 			return vysledek;
-
-
-
 		}
 	}
 }
