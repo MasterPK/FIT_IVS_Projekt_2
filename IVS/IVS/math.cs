@@ -17,6 +17,12 @@ namespace MathLibrary
 		{
 			return a + b;
 		}
+		/// <summary>
+		/// Rozdil dvou cisel na vstupu
+		/// </summary>
+		/// <param name="a"></param>
+		/// <param name="b"></param>
+		/// <returns>Rozdil vstupu</returns>
 		public static double Rozdil(double a, double b)
 		{
 			return a - b;
