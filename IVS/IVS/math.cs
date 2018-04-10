@@ -15,6 +15,7 @@ namespace MathLibrary
 		/// <returns>Vraci True pokud je cislo cele, jinak false</returns>
 		private static bool Test_Int(double a)
 		{
+			if ((a % 1) == 0)
 				return true;
 			else
 				return false;
