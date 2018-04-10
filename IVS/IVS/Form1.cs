@@ -20,8 +20,7 @@ namespace IVS
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			math var = new math();
-			double tmp = var.Soucet(1, 1);
+			double tmp = math.Soucet(1, 1);
 			MessageBox.Show(tmp.ToString());
 		}
 	}

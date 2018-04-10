@@ -8,7 +8,7 @@ namespace MathLibrary
 {
 	class math
 	{
-		public double Soucet(double a, double b)
+		public static double Soucet(double a, double b)
 		{
 			return a + b;
 		}
