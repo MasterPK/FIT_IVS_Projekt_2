@@ -99,9 +99,9 @@ namespace MathLibrary
 			if (n == 0) {
 				return 1;
 			}
-			double vysledek=x;
-			for (int i = 0; i < n-1; i++) {
-				vysledek = math.Nasob(vysledek,x);
+			double vysledek = x;
+			for (int i = 0; i < n - 1; i++) {
+				vysledek = math.Nasob(vysledek, x);
 			}
 			return vysledek;
 		}
@@ -114,7 +114,7 @@ namespace MathLibrary
 		/// <returns>Vraci odmocninu</returns>
 		public static double Odmocnina(double x, int n, int iter)
 		{
-			if (Test_Int(n) == false || n < 0 || x<0) {
+			if (Test_Int(n) == false || n < 0 || x < 0) {
 				throw new ArgumentException();
 			}
 			double horni_mez = x;
@@ -135,5 +135,6 @@ namespace MathLibrary
 			}
 			return vysledek;
 		}
+		
 	}
 }
