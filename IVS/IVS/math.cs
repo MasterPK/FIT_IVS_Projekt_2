@@ -135,5 +135,21 @@ namespace MathLibrary
 			}
 			return vysledek;
 		}
+		/// <summary>
+		/// Vypocita Tangens pomoci metody zretezeneho zlomku
+		/// </summary>
+		/// <param name="x">Uhel v radianech</param>
+		/// <returns>´Vraci tangens s presnosti mensi jak 10^-8</returns>
+		public static double Tangens(double x)
+		{
+			//TODO definicni obor
+			double cf = 0;
+			double b = 1;
+			for (int i = 15; i > 0; i--) {
+				double a = (2 * i - 1) / x;
+				cf = b / (a - cf);
+			}
+			return cf;
+		}
 	}
 }
