@@ -8,11 +8,12 @@ namespace MathLibrary
 {
 	class math
 	{
-		/*
-		 * @brief Secte dve cisla
-		 * @param a,b Vstupy cisel
-		 * @return soucet vstupu
-		 */
+		/// <summary>
+		/// Soucet dvou cisel na vstupu
+		/// </summary>
+		/// <param name="a"></param>
+		/// <param name="b"></param>
+		/// <returns>Soucet vstupu</returns>
 		public static double Soucet(double a, double b)
 		{
 			return a + b;
@@ -27,10 +28,23 @@ namespace MathLibrary
 		{
 			return a - b;
 		}
+		/// <summary>
+		/// Nasobeni dvou cisel na vstupu
+		/// </summary>
+		/// <param name="a"></param>
+		/// <param name="b"></param>
+		/// <returns>Nasobeni vstupu</returns>
 		public static double Nasob(double a, double b)
 		{
 			return a * b;
 		}
+		/// <summary>
+		/// Deleni dvou cisel na vstupu
+		/// </summary>
+		/// <param name="a"></param>
+		/// <param name="b"></param>
+		/// <exception cref="DivideByZeroException">Nastavi pri deleni nulou</exception>
+		/// <returns>Deleni vstupu</returns>
 		public static double Podil(double a, double b)
         {
 			if (b == 0) {
@@ -38,6 +52,6 @@ namespace MathLibrary
 			}
 			return a / b;
 		}
-
+		
 	}
 }
