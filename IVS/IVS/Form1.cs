@@ -21,6 +21,15 @@ namespace IVS
 		private void button1_Click(object sender, EventArgs e)
 		{
 			double tmp = math.Soucet(1, 1);
+			try 
+			{
+				tmp = math.Podil(1, 0);
+			}
+			catch (DivideByZeroException) 
+			{
+				MessageBox.Show("Dělení nulou!");
+				return;
+			}
 			MessageBox.Show(tmp.ToString());
 		}
 	}

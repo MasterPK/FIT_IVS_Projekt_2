@@ -8,13 +8,30 @@ namespace MathLibrary
 {
 	class math
 	{
+		/*
+		 * @brief Secte dve cisla
+		 * @param a,b Vstupy cisel
+		 * @return soucet vstupu
+		 */
 		public static double Soucet(double a, double b)
 		{
 			return a + b;
 		}
-        public static double Podil(double c, double d)
+		public static double Rozdil(double a, double b)
+		{
+			return a - b;
+		}
+		public static double Nasob(double a, double b)
+		{
+			return a * b;
+		}
+		public static double Podil(double a, double b)
         {
-            return c - d
-        }
+			if (b == 0) {
+				throw new DivideByZeroException();
+			}
+			return a / b;
+		}
+
 	}
 }
