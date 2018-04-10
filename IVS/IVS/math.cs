@@ -105,5 +105,11 @@ namespace MathLibrary
 			}
 			return vysledek;
 		}
+		public static double Odmocnina(int x, int n)
+		{
+			if (Test_Int(n) == false || n < 0 || Test_Int(x)==false || x<0) {
+				throw new ArgumentException();
+			}
+		}
 	}
 }
