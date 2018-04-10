@@ -72,7 +72,7 @@ namespace MathLibrary
 		/// <returns>Faktorial vstupu</returns>
 		public static int Faktorial(double a)
 		{
-			if (Test_Int(a) == false && a >= 0) {
+			if (Test_Int(a) == false || a < 0) {
 				throw new ArgumentException();
 			}
 			if (a == 0 || a == 1) {
@@ -93,7 +93,7 @@ namespace MathLibrary
 		/// <returns>Vraci N-tou mocninu vstupu</returns>
 		public static double Umocnit(double x, double n)
 		{
-			if (Test_Int(n) == false && n >= 0) {
+			if (Test_Int(n) == false || n < 0) {
 				throw new ArgumentException();
 			}
 			if (n == 0) {
