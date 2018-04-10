@@ -134,7 +134,6 @@ namespace MathLibrary
 				k = math.Umocnit(vysledek, n);
 			}
 			return vysledek;
-
 		}
 	}
 }
