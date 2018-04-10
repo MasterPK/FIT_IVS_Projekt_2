@@ -12,5 +12,9 @@ namespace MathLibrary
 		{
 			return a + b;
 		}
+        public static double Podil(double c, double d)
+        {
+            return c - d
+        }
 	}
 }
