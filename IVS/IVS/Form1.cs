@@ -264,5 +264,10 @@ namespace IVS
             double cislo = Convert.ToDouble(textBox1.Text);
             textBox1.Text =Convert.ToString(math.Tangens(cislo));
         }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text.Remove(textBox1.Text.Length - 1);
+        }
     }
 }
