@@ -153,6 +153,5 @@ namespace MathLibrary
 			}
 			return cf;
 		}
-
 	}
 }
