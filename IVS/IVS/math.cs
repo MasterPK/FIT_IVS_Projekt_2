@@ -144,7 +144,6 @@ namespace MathLibrary
 		/// <returns>´Vraci tangens s presnosti mensi jak 10^-8</returns>
 		public static double Tangens(double x)
 		{
-			//TODO definicni obor
 			double cf = 0;
 			double b = 1;
 			for (int i = 15; i > 0; i--) {
