@@ -66,6 +66,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Testy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Testy.Designer.cs">
+      <DependentUpon>Testy.cs</DependentUpon>
+    </Compile>
     <Compile Include="math.cs" />
     <Compile Include="napoveda.cs">
       <SubType>Form</SubType>
@@ -90,6 +96,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Testy.resx">
+      <DependentUpon>Testy.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

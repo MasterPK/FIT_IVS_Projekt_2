@@ -282,5 +282,16 @@ namespace IVS
         {
 
         }
+
+        /// <summary>
+        /// Spusti testy
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Spusteni_testu_Click(object sender, EventArgs e)
+        {
+            Form testy = new Testy();
+            testy.Show();
+        }
     }
 }
