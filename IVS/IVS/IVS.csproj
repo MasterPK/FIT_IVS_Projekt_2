@@ -67,6 +67,12 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="math.cs" />
+    <Compile Include="napoveda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="napoveda.Designer.cs">
+      <DependentUpon>napoveda.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
