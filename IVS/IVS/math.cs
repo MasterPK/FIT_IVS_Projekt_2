@@ -59,7 +59,8 @@ namespace MathLibrary
 		/// <returns>Deleni vstupu</returns>
 		public static double Podil(double a, double b)
 		{
-			if (b == 0) {
+			if (b == 0)
+			{
 				throw new DivideByZeroException();
 			}
 			return a / b;
@@ -72,14 +73,17 @@ namespace MathLibrary
 		/// <returns>Faktorial vstupu</returns>
 		public static int Faktorial(double a)
 		{
-			if (Test_Int(a) == false || a < 0) {
+			if (Test_Int(a) == false || a < 0)
+			{
 				throw new ArgumentException();
 			}
-			if (a == 0 || a == 1) {
+			if (a == 0 || a == 1)
+			{
 				return 1;
 			}
 			int f = 1;
-			for (int i = 1; i <= a; i++) {
+			for (int i = 1; i <= a; i++)
+			{
 				f *= i;
 			}
 			return f;
@@ -93,14 +97,17 @@ namespace MathLibrary
 		/// <returns>Vraci N-tou mocninu vstupu</returns>
 		public static double Umocnit(double x, double n)
 		{
-			if (Test_Int(n) == false || n < 0) {
+			if (Test_Int(n) == false || n < 0)
+			{
 				throw new ArgumentException();
 			}
-			if (n == 0) {
+			if (n == 0)
+			{
 				return 1;
 			}
 			double vysledek = x;
-			for (int i = 0; i < n - 1; i++) {
+			for (int i = 0; i < n - 1; i++)
+			{
 				vysledek = math.Nasob(vysledek, x);
 			}
 			return vysledek;
@@ -114,7 +121,8 @@ namespace MathLibrary
 		/// <returns>Vraci odmocninu</returns>
 		public static double Odmocnina(double x, int n, int iter)
 		{
-			if (Test_Int(n) == false || n < 0 || x < 0) {
+			if (Test_Int(n) == false || n < 0 || x < 0)
+			{
 				throw new ArgumentException();
 			}
 			double horni_mez = x;
@@ -122,12 +130,15 @@ namespace MathLibrary
 
 			double vysledek = x / 2;
 			double k = math.Umocnit(vysledek, n);
-			for (int i = 0; i < iter; i++) {
-				if (k > x) {
+			for (int i = 0; i < iter; i++)
+			{
+				if (k > x)
+				{
 					horni_mez = vysledek;
 					vysledek = vysledek - ((horni_mez - dolni_mez) / 2);
 				}
-				else {
+				else
+				{
 					dolni_mez = vysledek;
 					vysledek = vysledek + ((horni_mez - dolni_mez) / 2);
 				}
@@ -146,11 +157,32 @@ namespace MathLibrary
 		{
 			double cf = 0;
 			double b = 1;
-			for (int i = 15; i > 0; i--) {
+			for (int i = 15; i > 0; i--)
+			{
 				double a = (2 * i - 1) / x;
 				cf = b / (a - cf);
 			}
 			return cf;
+		}
+		public static double Zpracovat_Vyraz(string vyraz)
+		{
+			while (vyraz.Contains('*'))
+			{
+				int index = vyraz.IndexOf('*');
+
+				string target = "+-*/";
+				char[] anyOf = target.ToCharArray();
+
+				int indexL = vyraz.Substring(0, index).LastIndexOfAny(anyOf);
+				double cislo1 = Convert.ToDouble(vyraz.Substring(indexL, index - indexL));
+
+				string tmp = vyraz.Substring(index, vyraz.Length - index);
+				int indexR = tmp.IndexOfAny(anyOf,1);
+				tmp = tmp.Substring(1, indexR-1);
+				double cislo2= Convert.ToDouble(tmp);
+				return cislo2;
+			}
+			return 0;
 		}
 
 	}
