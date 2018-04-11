@@ -265,9 +265,19 @@ namespace IVS
             textBox1.Text =Convert.ToString(math.Tangens(cislo));
         }
 
+        /// <summary>
+        /// mazanie jednotlivých znakov
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button23_Click(object sender, EventArgs e)
         {
             textBox1.Text = textBox1.Text.Remove(textBox1.Text.Length - 1);
+        }
+
+        private void button24_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
