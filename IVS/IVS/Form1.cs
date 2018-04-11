@@ -20,7 +20,7 @@ namespace IVS
 
         private void Calculator_Load(object sender, EventArgs e)
         {
-			MessageBox.Show(math.Zpracovat_Vyraz("5+5-5451*123456789*41").ToString());
+			//MessageBox.Show(math.Zpracovat_Vyraz("5+5-5*5/5").ToString());
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
