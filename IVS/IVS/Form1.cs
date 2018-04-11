@@ -11,9 +11,9 @@ using MathLibrary;
 
 namespace IVS
 {
-	public partial class Form1 : Form
+	public partial class Calculator : Form
 	{
-		public Form1()
+		public Calculator()
 		{
 			InitializeComponent();
 		}
@@ -32,5 +32,25 @@ namespace IVS
 			}
 			MessageBox.Show(tmp.ToString());
 		}
-	}
+
+        private void Calculator_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
 }
