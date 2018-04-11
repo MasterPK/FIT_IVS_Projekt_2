@@ -277,7 +277,7 @@ namespace IVS
 
         private void button24_Click(object sender, EventArgs e)
         {
-            MessageBox.Show()
+
         }
     }
 }
