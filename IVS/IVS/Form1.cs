@@ -11,12 +11,12 @@ using MathLibrary;
 
 namespace IVS
 {
-	public partial class Calculator : Form
-	{
-		public Calculator()
-		{
-			InitializeComponent();
-		}
+    public partial class Calculator : Form
+    {
+        public Calculator()
+        {
+            InitializeComponent();
+        }
 
         private void Calculator_Load(object sender, EventArgs e)
         {
@@ -216,6 +216,39 @@ namespace IVS
         private void button12_Click(object sender, EventArgs e)
         {
             textBox1.Text = textBox1.Text + "^";
+        }
+
+        private void spracovanie_zatvorky(string text)
+        {
+            while (text.Contains('(') && text.Contains(')'))
+            {
+                int openIndex = 0;
+                int closeIndex = 0;
+                for(int i=0; i < text.Length; i++)
+                {
+                    if(text[i] == '(')
+                    {
+                        openIndex = i;
+                    }
+                    if(text[i] == ')')
+                    {
+                        closeIndex = i;
+                        string zatvorka = text.Substring(openIndex + 1, closeIndex - openIndex - 1);
+                        text = text.Remove(openIndex, closeIndex - openIndex + 1);
+                        MessageBox.Show(text);
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// rovná sa =
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button11_Click(object sender, EventArgs e)
+        {
+            spracovanie_zatvorky(textBox1.Text);
         }
     }
 }
