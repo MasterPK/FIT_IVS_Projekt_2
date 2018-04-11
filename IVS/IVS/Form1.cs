@@ -195,7 +195,7 @@ namespace IVS
         /// <param name="e"></param>
         private void button17_Click(object sender, EventArgs e)
         {
-            textBox1.Text = textBox1.Text + "x";
+            textBox1.Text = textBox1.Text + "*";
         }
 
         /// <summary>
