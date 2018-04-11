@@ -135,6 +135,5 @@ namespace MathLibrary
 			}
 			return vysledek;
 		}
-		
 	}
 }
