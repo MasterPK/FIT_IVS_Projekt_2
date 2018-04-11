@@ -164,6 +164,11 @@ namespace MathLibrary
 			}
 			return cf;
 		}
+		/// <summary>
+		/// Zpracovava jednoduchy vyraz (+-*/) podle matematickych priorit
+		/// </summary>
+		/// <param name="vyraz">vyraz typu string</param>
+		/// <returns>vraci vysledek jako jedno cislo typu string (pro kompatibilitu s dalsimi funkcemi)</returns>
 		public static string Zpracovat_Vyraz(string vyraz)
 		{
 			while (vyraz.Contains('*'))
@@ -207,7 +212,8 @@ namespace MathLibrary
 			while (vyraz.Contains('+'))
 			{
 				int index = vyraz.IndexOf('+');
-
+				if(index==0)
+					vyraz = vyraz.Remove(0, 1);
 				string target = "+-*/";
 				char[] anyOf = target.ToCharArray();
 
@@ -227,11 +233,17 @@ namespace MathLibrary
 			{
 				int index = vyraz.IndexOf('-');
 
+				if (index == 0)
+					return vyraz;
 				string target = "+-*/";
 				char[] anyOf = target.ToCharArray();
 
 				int indexL = vyraz.Substring(0, index).LastIndexOfAny(anyOf);
-				double cislo1 = Convert.ToDouble(vyraz.Substring(indexL + 1, index - indexL - 1));
+				double cislo1;
+				if (indexL == -1)
+					cislo1 = Convert.ToDouble(vyraz.Substring(indexL + 1, index - indexL - 1));
+				else
+					cislo1 = Convert.ToDouble(vyraz.Substring(0, index - 1));
 
 				string tmp = vyraz.Substring(index, vyraz.Length - index);
 				int indexR = tmp.IndexOfAny(anyOf, 1);
