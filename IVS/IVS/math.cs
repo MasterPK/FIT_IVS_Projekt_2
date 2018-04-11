@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MathLibrary
 {
-	class math
+	public class math
 	{
 		/// <summary>
 		/// Testuje jestli zadane cislo je cele
