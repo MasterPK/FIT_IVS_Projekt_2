@@ -142,7 +142,7 @@ namespace MathLibrary
 		/// </summary>
 		/// <param name="x">Uhel v radianech</param>
 		/// <returns>´Vraci tangens s presnosti mensi jak 10^-8</returns>
-		public static double Tangens(double x)
+		public static double Tang(double x)
 		{
 			//TODO definicni obor
 			double cf = 0;
