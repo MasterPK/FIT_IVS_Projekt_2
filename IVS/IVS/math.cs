@@ -135,6 +135,8 @@ namespace MathLibrary
 			}
 			return vysledek;
 		}
+
+
 		/// <summary>
 		/// Vypocita Tangens pomoci metody zretezeneho zlomku
 		/// </summary>
