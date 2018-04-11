@@ -212,8 +212,12 @@ namespace MathLibrary
 			while (vyraz.Contains('+'))
 			{
 				int index = vyraz.IndexOf('+');
-				if(index==0)
+				if (index == 0)
+				{
 					vyraz = vyraz.Remove(0, 1);
+					continue;
+				}
+					
 				string target = "+-*/";
 				char[] anyOf = target.ToCharArray();
 
