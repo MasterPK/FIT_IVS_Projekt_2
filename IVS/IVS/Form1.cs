@@ -224,18 +224,17 @@ namespace IVS
             {
                 int openIndex = 0;
                 int closeIndex = 0;
-                for(int i=0; i < text.Length; i++)
+                for (int i = 0; i < text.Length; i++)
                 {
-                    if(text[i] == '(')
+                    if (text[i] == '(')
                     {
                         openIndex = i;
                     }
-                    if(text[i] == ')')
+                    if (text[i] == ')')
                     {
                         closeIndex = i;
                         string zatvorka = text.Substring(openIndex + 1, closeIndex - openIndex - 1);
                         text = text.Remove(openIndex, closeIndex - openIndex + 1);
-                        MessageBox.Show(text);
                     }
                 }
             }
@@ -249,6 +248,21 @@ namespace IVS
         private void button11_Click(object sender, EventArgs e)
         {
             spracovanie_zatvorky(textBox1.Text);
+        }
+
+        /// <summary>
+        /// tangens
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button14_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text.Contains('/') || textBox1.Text.Contains('*') || textBox1.Text.Contains('+') || textBox1.Text.Contains('-') || textBox1.Text.Contains('^'))
+            {
+                textBox1.Text = "Syntax Error!";
+            }
+            double cislo = Convert.ToDouble(textBox1.Text);
+            textBox1.Text =Convert.ToString(math.Tangens(cislo));
         }
     }
 }
