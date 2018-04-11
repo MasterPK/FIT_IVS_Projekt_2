@@ -185,6 +185,63 @@ namespace MathLibrary
 				vyraz=vyraz.Remove(indexL + 1, indexR+index - indexL-1);
 				vyraz=vyraz.Insert(indexL + 1, (cislo1 * cislo2).ToString());
 			}
+			while (vyraz.Contains('/'))
+			{
+				int index = vyraz.IndexOf('/');
+
+				string target = "+-*/";
+				char[] anyOf = target.ToCharArray();
+
+				int indexL = vyraz.Substring(0, index).LastIndexOfAny(anyOf);
+				double cislo1 = Convert.ToDouble(vyraz.Substring(indexL + 1, index - indexL - 1));
+
+				string tmp = vyraz.Substring(index, vyraz.Length - index);
+				int indexR = tmp.IndexOfAny(anyOf, 1);
+				if (indexR == -1)
+					indexR = tmp.Length;
+				tmp = tmp.Substring(1, indexR - 1);
+				double cislo2 = Convert.ToDouble(tmp);
+				vyraz = vyraz.Remove(indexL + 1, indexR + index - indexL - 1);
+				vyraz = vyraz.Insert(indexL + 1, (cislo1 / cislo2).ToString());
+			}
+			while (vyraz.Contains('+'))
+			{
+				int index = vyraz.IndexOf('+');
+
+				string target = "+-*/";
+				char[] anyOf = target.ToCharArray();
+
+				int indexL = vyraz.Substring(0, index).LastIndexOfAny(anyOf);
+				double cislo1 = Convert.ToDouble(vyraz.Substring(indexL + 1, index - indexL - 1));
+
+				string tmp = vyraz.Substring(index, vyraz.Length - index);
+				int indexR = tmp.IndexOfAny(anyOf, 1);
+				if (indexR == -1)
+					indexR = tmp.Length;
+				tmp = tmp.Substring(1, indexR - 1);
+				double cislo2 = Convert.ToDouble(tmp);
+				vyraz = vyraz.Remove(indexL + 1, indexR + index - indexL - 1);
+				vyraz = vyraz.Insert(indexL + 1, (cislo1 + cislo2).ToString());
+			}
+			while (vyraz.Contains('-'))
+			{
+				int index = vyraz.IndexOf('-');
+
+				string target = "+-*/";
+				char[] anyOf = target.ToCharArray();
+
+				int indexL = vyraz.Substring(0, index).LastIndexOfAny(anyOf);
+				double cislo1 = Convert.ToDouble(vyraz.Substring(indexL + 1, index - indexL - 1));
+
+				string tmp = vyraz.Substring(index, vyraz.Length - index);
+				int indexR = tmp.IndexOfAny(anyOf, 1);
+				if (indexR == -1)
+					indexR = tmp.Length;
+				tmp = tmp.Substring(1, indexR - 1);
+				double cislo2 = Convert.ToDouble(tmp);
+				vyraz = vyraz.Remove(indexL + 1, indexR + index - indexL - 1);
+				vyraz = vyraz.Insert(indexL + 1, (cislo1 - cislo2).ToString());
+			}
 			return vyraz;
 		}
 
