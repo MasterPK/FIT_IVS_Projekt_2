@@ -261,8 +261,11 @@ namespace IVS
             {
                 textBox1.Text = "Syntax Error!";
             }
-            double cislo = Convert.ToDouble(textBox1.Text);
-            textBox1.Text =Convert.ToString(math.Tangens(cislo));
+            else
+            {
+                double cislo = Convert.ToDouble(textBox1.Text);
+                textBox1.Text = Convert.ToString(math.Tangens(cislo));
+            }
         }
 
         /// <summary>
