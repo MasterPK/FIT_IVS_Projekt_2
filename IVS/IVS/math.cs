@@ -311,8 +311,9 @@ namespace MathLibrary
 				tmp = tmp.Substring(1, indexR - 1);
 				double cislo2 = Convert.ToDouble(tmp);
 				vyraz = vyraz.Remove(indexL + 1, indexR + index - indexL - 1);
-				vyraz = vyraz.Insert(indexL + 1, (cislo1 * cislo2).ToString());
-				if ((cislo1 / cislo2) >= 0)
+				double vys = math.Nasob(cislo1, cislo2);
+				vyraz = vyraz.Insert(indexL + 1, vys.ToString());
+				if (vys >= 0)
 				{
 					vyraz = vyraz.Insert(indexL + 1, "+");
 				}
@@ -362,9 +363,9 @@ namespace MathLibrary
 				tmp = tmp.Substring(1, indexR - 1);
 				double cislo2 = Convert.ToDouble(tmp);
 				vyraz = vyraz.Remove(indexL + 1, indexR + index - indexL - 1);
-
-				vyraz = vyraz.Insert(indexL + 1, (cislo1 / cislo2).ToString());
-				if ((cislo1 / cislo2) >= 0)
+				double vys = math.Podil(cislo1, cislo2);
+				vyraz = vyraz.Insert(indexL + 1, (vys).ToString());
+				if (vys >= 0)
 				{
 					
 					vyraz = vyraz.Insert(indexL + 1, "+");
@@ -418,9 +419,9 @@ namespace MathLibrary
 				tmp = tmp.Substring(1, indexR - 1);
 				double cislo2 = Convert.ToDouble(tmp);
 				vyraz = vyraz.Remove(indexL + 1, indexR + index - indexL - 1);
-
-				vyraz = vyraz.Insert(indexL + 1, (cislo1 + cislo2).ToString());
-				if ((cislo1 + cislo2) >= 0)
+				double vys = math.Soucet(cislo1, cislo2);
+				vyraz = vyraz.Insert(indexL + 1, (vys).ToString());
+				if (vys >= 0)
 				{
 
 					vyraz = vyraz.Insert(indexL + 1, "+");
@@ -486,11 +487,10 @@ namespace MathLibrary
 				tmp = tmp.Substring(1, indexR - 1);
 				double cislo2 = Convert.ToDouble(tmp);
 				vyraz = vyraz.Remove(indexL + 1, indexR + index - indexL - 1);
-
-				vyraz = vyraz.Insert(indexL + 1, (cislo1 - cislo2).ToString());
-				if ((cislo1 - cislo2) >= 0)
+				double vys = math.Rozdil(cislo1, cislo2);
+				vyraz = vyraz.Insert(indexL + 1, (vys).ToString());
+				if ((vys) >= 0)
 				{
-
 					vyraz = vyraz.Insert(indexL + 1, "+");
 				}
 
