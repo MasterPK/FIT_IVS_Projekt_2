@@ -235,9 +235,14 @@ namespace IVS
                         closeIndex = i;
                         string zatvorka = text.Substring(openIndex + 1, closeIndex - openIndex - 1);
                         text = text.Remove(openIndex, closeIndex - openIndex + 1);
+                        string vysledok = math.Zpracovat_Vyraz(zatvorka);
+                        text = text.Insert(openIndex, vysledok);
+                        i = 0;
                     }
                 }
             }
+            text = math.Zpracovat_Vyraz(text);
+            textBox1.Text = text;
         }
 
         /// <summary>
@@ -262,7 +267,15 @@ namespace IVS
                     textBox1.Text = vysledok.ToString();
                 }
             }
-            //spracovanie_zatvorky(textBox1.Text);
+            if(textBox1.Text.Contains('(') || textBox1.Text.Contains(')'))
+            {
+                spracovanie_zatvorky(textBox1.Text);
+            }
+            else
+            {
+                textBox1.Text = math.Zpracovat_Vyraz(textBox1.Text);
+            }
+
         }
 
         /// <summary>
