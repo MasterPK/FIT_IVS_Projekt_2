@@ -269,7 +269,7 @@ namespace IVS
             if (textBox1.Text.Contains('√'))
             {
                 int index = textBox1.Text.IndexOf('√');
-                if (char.IsDigit(textBox1.Text[index-1]) == false)
+                if (char.IsDigit(textBox1.Text[index]) == false)
                 {
                     textBox1.Text=textBox1.Text.Insert(index, "2");
                 }
@@ -335,7 +335,10 @@ namespace IVS
         /// <param name="e"></param>
         private void button23_Click(object sender, EventArgs e)
         {
-            textBox1.Text = textBox1.Text.Remove(textBox1.Text.Length - 1);
+            if(textBox1.Text.Length != 0)
+            {
+                textBox1.Text = textBox1.Text.Remove(textBox1.Text.Length - 1);
+            }
         }
         
         /// <summary>
