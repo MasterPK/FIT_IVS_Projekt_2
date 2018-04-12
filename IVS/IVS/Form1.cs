@@ -20,7 +20,7 @@ namespace IVS
 
         private void Calculator_Load(object sender, EventArgs e)
         {
-			MessageBox.Show(math.Zpracovat_Vyraz("+5/5+5/5").ToString());
+			//MessageBox.Show(math.Zpracovat_Vyraz("5/5+5/5").ToString());
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -247,7 +247,17 @@ namespace IVS
         /// <param name="e"></param>
         private void button11_Click(object sender, EventArgs e)
         {
-            spracovanie_zatvorky(textBox1.Text);
+            if (textBox1.Text.Contains('√') || textBox1.Text.Contains('*') || textBox1.Text.Contains('/') || textBox1.Text.Contains('+') || textBox1.Text.Contains('-') || textBox1.Text.Contains('^'))
+            {
+                textBox1.Text = "Syntax Error!";
+                return;
+            }
+            if (textBox1.Text.Contains('√'))
+            {
+                int index = textBox1.Text.IndexOf('√');
+                string cislo = textBox1.Text.Substring(index);
+            }
+            //spracovanie_zatvorky(textBox1.Text);
         }
 
         /// <summary>
@@ -292,6 +302,16 @@ namespace IVS
         {
             Form testy = new Testy();
             testy.Show();
+        }
+
+        /// <summary>
+        /// odmocnina
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button13_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + "√";
         }
     }
 }
