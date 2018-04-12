@@ -20,6 +20,7 @@ namespace IVS
 
         private void Calculator_Load(object sender, EventArgs e)
         {
+			this.ActiveControl = textBox1;
 			//MessageBox.Show(math.Zpracovat_Vyraz("-1-1-1+1+1+1+5*5-5*5*-5/+1/-5"));//==0 FUNGUJE!!! 
 			//double[] pole = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 			//MessageBox.Show(odchylka_s(10,pole).ToString());
@@ -389,6 +390,11 @@ namespace IVS
 
 		}
 
+		/// <summary>
+		/// Kontroluje stisknuti Enter, Delete
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void textBox1_KeyDown(object sender, KeyEventArgs e)
 		{
 			if (e.KeyData == Keys.Enter)
@@ -400,19 +406,6 @@ namespace IVS
 			if (e.KeyData == Keys.Delete)
 			{
 				button22.PerformClick();
-			}
-			if (e.KeyData == Keys.Back)
-			{
-				string s = textBox1.Text;
-
-				if (s.Length > 0)
-				{
-					s = s.Substring(0, s.Length -1);
-				}
-
-				textBox1.Text = s;
-				textBox1.SelectionStart = textBox1.Text.Length;
-				textBox1.SelectionLength = 0;
 			}
 		}
 
