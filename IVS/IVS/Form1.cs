@@ -325,5 +325,21 @@ namespace IVS
         {
             textBox1.Text = textBox1.Text + "√";
         }
-    }
+
+		private void Calculator_KeyDown(object sender, KeyEventArgs e)
+		{
+
+		}
+
+		private void textBox1_KeyDown(object sender, KeyEventArgs e)
+		{
+			if (e.KeyData == Keys.Enter)
+			{
+				button11.PerformClick();
+				textBox1.SelectionStart = textBox1.Text.Length ;
+				textBox1.SelectionLength = 0;
+			}
+				
+		}
+	}
 }
