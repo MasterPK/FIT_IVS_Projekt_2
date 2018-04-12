@@ -423,7 +423,6 @@ namespace MathLibrary
 				vyraz = vyraz.Insert(indexL + 1, (vys).ToString());
 				if (vys >= 0)
 				{
-
 					vyraz = vyraz.Insert(indexL + 1, "+");
 				}
 
