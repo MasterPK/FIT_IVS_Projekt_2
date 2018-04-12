@@ -280,7 +280,15 @@ namespace IVS
             }
             else
             {
-                vystup = math.Zpracovat_Vyraz(textBox1.Text);
+				try
+				{
+					vystup = math.Zpracovat_Vyraz(textBox1.Text);
+				}
+				catch
+				{
+					MessageBox.Show("Chyba vstupu! Zkontrolujte znamenka!", "Chyba!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					return;
+				}
             }
 
             if (vystup[0] == '+')
