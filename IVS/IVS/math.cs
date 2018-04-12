@@ -129,7 +129,7 @@ namespace MathLibrary
 
 			double vysledek = x / 2;
 			double k = math.Umocnit(vysledek, n);
-			for (int i = 0; i < 50; i++)
+			for (int i = 0; i < 500; i++)
 			{
 				if (k > x)
 				{
