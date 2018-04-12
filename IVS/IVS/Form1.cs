@@ -218,7 +218,12 @@ namespace IVS
             textBox1.Text = textBox1.Text + "^";
         }
 
-        private void spracovanie_zatvorky(string text)
+        /// <summary>
+        /// funkcia spracuje a odstráni zátvorky
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns></returns>
+        private string spracovanie_zatvorky(string text)
         {
             while (text.Contains('(') && text.Contains(')'))
             {
@@ -242,7 +247,7 @@ namespace IVS
                 }
             }
             text = math.Zpracovat_Vyraz(text);
-            textBox1.Text = text;
+            return text;
         }
 
         /// <summary>
@@ -252,26 +257,34 @@ namespace IVS
         /// <param name="e"></param>
         private void button11_Click(object sender, EventArgs e)
         {
+            string vystup="";
             if (textBox1.Text.Contains('√'))
             {
                 int index = textBox1.Text.IndexOf('√');
-                if (char.IsDigit(textBox1.Text[index+1]) && char.IsDigit(textBox1.Text[index-1]))
+                if (char.IsDigit(textBox1.Text[index-1]) == false)
                 {
-                    textBox1.Text = math.Zpracovat_Vyraz(textBox1.Text);
-                }
-                else
-                {
-                    textBox1.Text = "Syntax Error!";
+                    textBox1.Text=textBox1.Text.Insert(index, "2");
                 }
             }
             if(textBox1.Text.Contains('(') || textBox1.Text.Contains(')'))
             {
-                spracovanie_zatvorky(textBox1.Text);
+                vystup=spracovanie_zatvorky(textBox1.Text);
             }
             else
             {
-                textBox1.Text = math.Zpracovat_Vyraz(textBox1.Text);
+                vystup = math.Zpracovat_Vyraz(textBox1.Text);
             }
+
+            if (vystup[0] == '+')
+            {
+                vystup = vystup.Remove(0, 1);
+                textBox1.Text = vystup;
+            }
+            else
+            {
+                textBox1.Text = vystup;
+            }
+
 
         }
 
