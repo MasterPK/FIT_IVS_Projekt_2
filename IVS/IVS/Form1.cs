@@ -318,9 +318,15 @@ namespace IVS
             textBox1.Text = textBox1.Text.Remove(textBox1.Text.Length - 1);
         }
         
+        /// <summary>
+        /// help
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button24_Click(object sender, EventArgs e)
         {
-
+            Form napoveda = new napoveda();
+            napoveda.Show();
         }
 
         /// <summary>
@@ -360,7 +366,7 @@ namespace IVS
 
 		private double odchylka_x()
 		{
-			return 0;
+            return 0;
 		}
 
 		private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
