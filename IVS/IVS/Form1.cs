@@ -275,10 +275,19 @@ namespace IVS
             string vystup="";
             if (textBox1.Text.Contains('√'))
             {
-                int index = textBox1.Text.IndexOf('√');
-                if (char.IsDigit(textBox1.Text[index]) == false)
+                for(int i = 0; i < textBox1.Text.Length; i++)
                 {
-                    textBox1.Text=textBox1.Text.Insert(index, "2");
+                    if(textBox1.Text[i] == '√')
+                    {
+                        if (i == 0)
+                        {
+                            textBox1.Text = textBox1.Text.Insert(i, "2");
+                        }
+                        if (i != 0 && char.IsDigit(textBox1.Text[i - 1]) == false)
+                        {
+                            textBox1.Text = textBox1.Text.Insert(i, "2");
+                        }
+                    }
                 }
             }
             if(textBox1.Text.Contains('(') || textBox1.Text.Contains(')'))
