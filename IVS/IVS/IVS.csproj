@@ -66,11 +66,26 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Testy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Testy.Designer.cs">
+      <DependentUpon>Testy.cs</DependentUpon>
+    </Compile>
     <Compile Include="math.cs" />
+    <Compile Include="napoveda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="napoveda.Designer.cs">
+      <DependentUpon>napoveda.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="napoveda.resx">
+      <DependentUpon>napoveda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -81,6 +96,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Testy.resx">
+      <DependentUpon>Testy.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

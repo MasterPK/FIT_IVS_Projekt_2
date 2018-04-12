@@ -11,17 +11,17 @@ using MathLibrary;
 
 namespace IVS
 {
-	public partial class Calculator : Form
-	{
-		public Calculator()
-		{
-			InitializeComponent();
-		}
+    public partial class Calculator : Form
+    {
+        public Calculator()
+        {
+            InitializeComponent();
+        }
 
         private void Calculator_Load(object sender, EventArgs e)
         {
-
-        }
+			//MessageBox.Show(math.Zpracovat_Vyraz("-1-1-1+1+1+1+5*5-5*5*-5/+1/-5"));//==0 FUNGUJE!!! 
+		}
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -195,7 +195,7 @@ namespace IVS
         /// <param name="e"></param>
         private void button17_Click(object sender, EventArgs e)
         {
-            textBox1.Text = textBox1.Text + "x";
+            textBox1.Text = textBox1.Text + "*";
         }
 
         /// <summary>
@@ -216,6 +216,114 @@ namespace IVS
         private void button12_Click(object sender, EventArgs e)
         {
             textBox1.Text = textBox1.Text + "^";
+        }
+
+        private void spracovanie_zatvorky(string text)
+        {
+            while (text.Contains('(') && text.Contains(')'))
+            {
+                int openIndex = 0;
+                int closeIndex = 0;
+                for (int i = 0; i < text.Length; i++)
+                {
+                    if (text[i] == '(')
+                    {
+                        openIndex = i;
+                    }
+                    if (text[i] == ')')
+                    {
+                        closeIndex = i;
+                        string zatvorka = text.Substring(openIndex + 1, closeIndex - openIndex - 1);
+                        text = text.Remove(openIndex, closeIndex - openIndex + 1);
+                        string vysledok = math.Zpracovat_Vyraz(zatvorka);
+                        text = text.Insert(openIndex, vysledok);
+                        i = 0;
+                    }
+                }
+            }
+            text = math.Zpracovat_Vyraz(text);
+            textBox1.Text = text;
+        }
+
+        /// <summary>
+        /// rovná sa =
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button11_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text.Contains('√'))
+            {
+                int index = textBox1.Text.IndexOf('√');
+                if (char.IsDigit(textBox1.Text[index+1]) && char.IsDigit(textBox1.Text[index-1]))
+                {
+                    textBox1.Text = math.Zpracovat_Vyraz(textBox1.Text);
+                }
+                else
+                {
+                    textBox1.Text = "Syntax Error!";
+                }
+            }
+            if(textBox1.Text.Contains('(') || textBox1.Text.Contains(')'))
+            {
+                spracovanie_zatvorky(textBox1.Text);
+            }
+            else
+            {
+                textBox1.Text = math.Zpracovat_Vyraz(textBox1.Text);
+            }
+
+        }
+
+        /// <summary>
+        /// tangens
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button14_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text.Contains('/') || textBox1.Text.Contains('*') || textBox1.Text.Contains('+') || textBox1.Text.Contains('-') || textBox1.Text.Contains('^'))
+            {
+                string text = math.Zpracovat_Vyraz(textBox1.Text);
+                double cislo = Convert.ToDouble(text);
+                textBox1.Text = Convert.ToString(math.Tangens(cislo));
+            }
+            else
+            {
+                double cislo = Convert.ToDouble(textBox1.Text);
+                textBox1.Text = Convert.ToString(math.Tangens(cislo));
+            }
+        }
+
+        /// <summary>
+        /// mazanie jednotlivých znakov
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button23_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text.Remove(textBox1.Text.Length - 1);
+        }
+        
+        private void button24_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// Spusti testy
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Spusteni_testu_Click(object sender, EventArgs e)
+        {
+            Form testy = new Testy();
+            testy.Show();
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + "√";
         }
     }
 }

@@ -59,7 +59,8 @@ namespace MathLibrary
 		/// <returns>Deleni vstupu</returns>
 		public static double Podil(double a, double b)
 		{
-			if (b == 0) {
+			if (b == 0)
+			{
 				throw new DivideByZeroException();
 			}
 			return a / b;
@@ -72,14 +73,17 @@ namespace MathLibrary
 		/// <returns>Faktorial vstupu</returns>
 		public static int Faktorial(double a)
 		{
-			if (Test_Int(a) == false || a < 0) {
+			if (Test_Int(a) == false || a < 0)
+			{
 				throw new ArgumentException();
 			}
-			if (a == 0 || a == 1) {
+			if (a == 0 || a == 1)
+			{
 				return 1;
 			}
 			int f = 1;
-			for (int i = 1; i <= a; i++) {
+			for (int i = 1; i <= a; i++)
+			{
 				f *= i;
 			}
 			return f;
@@ -93,28 +97,31 @@ namespace MathLibrary
 		/// <returns>Vraci N-tou mocninu vstupu</returns>
 		public static double Umocnit(double x, double n)
 		{
-			if (Test_Int(n) == false || n < 0) {
+			if (Test_Int(n) == false || n < 0)
+			{
 				throw new ArgumentException();
 			}
-			if (n == 0) {
+			if (n == 0)
+			{
 				return 1;
 			}
 			double vysledek = x;
-			for (int i = 0; i < n - 1; i++) {
+			for (int i = 0; i < n - 1; i++)
+			{
 				vysledek = math.Nasob(vysledek, x);
 			}
 			return vysledek;
 		}
 		/// <summary>
-		/// Pocita N-tou odmocninu pomoci kraceni mezi, presnost urcuje pocet iteraci
+		/// Pocita N-tou odmocninu pomoci kraceni mezi, presnost je 500 iteraci
 		/// </summary>
 		/// <param name="x">Zaklad</param>
 		/// <param name="n">N-ta odmocnina</param>
-		/// <param name="iter">Iteraci</param>
-		/// <returns>Vraci odmocninu</returns>
-		public static double Odmocnina(double x, int n, int iter)
+		/// <returns>Vraci odmocninu s presnosti mensi jak 10^-10</returns>
+		public static double Odmocnina(double x, int n)
 		{
-			if (Test_Int(n) == false || n < 0 || x < 0) {
+			if (Test_Int(n) == false || n < 0 || x < 0)
+			{
 				throw new ArgumentException();
 			}
 			double horni_mez = x;
@@ -122,12 +129,15 @@ namespace MathLibrary
 
 			double vysledek = x / 2;
 			double k = math.Umocnit(vysledek, n);
-			for (int i = 0; i < iter; i++) {
-				if (k > x) {
+			for (int i = 0; i < 500; i++)
+			{
+				if (k > x)
+				{
 					horni_mez = vysledek;
 					vysledek = vysledek - ((horni_mez - dolni_mez) / 2);
 				}
-				else {
+				else
+				{
 					dolni_mez = vysledek;
 					vysledek = vysledek + ((horni_mez - dolni_mez) / 2);
 				}
@@ -135,6 +145,8 @@ namespace MathLibrary
 			}
 			return vysledek;
 		}
+
+
 		/// <summary>
 		/// Vypocita Tangens pomoci metody zretezeneho zlomku
 		/// </summary>
@@ -142,14 +154,348 @@ namespace MathLibrary
 		/// <returns>´Vraci tangens s presnosti mensi jak 10^-8</returns>
 		public static double Tangens(double x)
 		{
-			//TODO definicni obor
 			double cf = 0;
 			double b = 1;
-			for (int i = 15; i > 0; i--) {
+			for (int i = 50; i > 0; i--)
+			{
 				double a = (2 * i - 1) / x;
 				cf = b / (a - cf);
 			}
 			return cf;
 		}
+		/// <summary>
+		/// Zpracovava jednoduchy vyraz (+-*/) podle matematickych priorit
+		/// </summary>
+		/// <param name="vyraz">vyraz typu string</param>
+		/// <returns>vraci vysledek jako jedno cislo typu string (pro kompatibilitu s dalsimi funkcemi)</returns>
+		public static string Zpracovat_Vyraz(string vyraz)
+		{
+			//vyraz = "0" + vyraz;
+			while (vyraz.Contains('√'))
+			{
+				int index = vyraz.IndexOf('√');
+
+				string target = "+-*/^";
+				char[] anyOf = target.ToCharArray();
+
+				int indexL = vyraz.Substring(0, index).LastIndexOfAny(anyOf);
+				double cislo1;
+				if (indexL == -1)
+				{
+					cislo1 = Convert.ToDouble(vyraz.Substring(indexL + 1, index - indexL - 1));
+				}
+				else
+				{
+					if (vyraz[indexL] == '-' || vyraz[indexL] == '+')
+					{
+						cislo1 = Convert.ToDouble(vyraz.Substring(indexL, index - indexL));
+						indexL--;
+					}
+					else
+					{
+						cislo1 = Convert.ToDouble(vyraz.Substring(indexL + 1, index - indexL - 1));
+					}
+				}
+
+				string tmp = vyraz.Substring(index, vyraz.Length - index);
+				int indexR;
+				if (tmp[1] == '-' || tmp[1] == '+')
+				{
+					indexR = tmp.IndexOfAny(anyOf, 2);
+				}
+				else
+				{
+					indexR = tmp.IndexOfAny(anyOf, 1);
+				}
+
+				if (indexR == -1)
+					indexR = tmp.Length;
+				tmp = tmp.Substring(1, indexR - 1);
+				double cislo2 = Convert.ToDouble(tmp);
+				vyraz = vyraz.Remove(indexL + 1, indexR + index - indexL - 1);
+				double vys = Odmocnina(cislo2, Convert.ToInt32(cislo1));
+				vyraz = vyraz.Insert(indexL + 1, vys.ToString());
+				if (vys >= 0)
+				{
+					vyraz = vyraz.Insert(indexL + 1, "+");
+				}
+			}
+			while (vyraz.Contains('^'))
+			{
+				int index = vyraz.IndexOf('^');
+
+				string target = "+-*/";
+				char[] anyOf = target.ToCharArray();
+
+				int indexL = vyraz.Substring(0, index).LastIndexOfAny(anyOf);
+				double cislo1;
+				if (indexL == -1)
+				{
+					cislo1 = Convert.ToDouble(vyraz.Substring(indexL + 1, index - indexL - 1));
+				}
+				else
+				{
+					if (vyraz[indexL] == '-' || vyraz[indexL] == '+')
+					{
+						cislo1 = Convert.ToDouble(vyraz.Substring(indexL, index - indexL));
+						indexL--;
+					}
+					else
+					{
+						cislo1 = Convert.ToDouble(vyraz.Substring(indexL + 1, index - indexL - 1));
+					}
+				}
+
+				string tmp = vyraz.Substring(index, vyraz.Length - index);
+				int indexR;
+				if (tmp[1] == '-' || tmp[1] == '+')
+				{
+					indexR = tmp.IndexOfAny(anyOf, 2);
+				}
+				else
+				{
+					indexR = tmp.IndexOfAny(anyOf, 1);
+				}
+
+				if (indexR == -1)
+					indexR = tmp.Length;
+				tmp = tmp.Substring(1, indexR - 1);
+				double cislo2 = Convert.ToDouble(tmp);
+				vyraz = vyraz.Remove(indexL + 1, indexR + index - indexL - 1);
+				double vys = Umocnit(cislo1, cislo2);
+				vyraz = vyraz.Insert(indexL + 1, vys.ToString());
+				if (vys >= 0)
+				{
+					vyraz = vyraz.Insert(indexL + 1, "+");
+				}
+			}
+			while (vyraz.Contains('*'))
+			{
+				int index = vyraz.IndexOf('*');
+
+				string target = "+-*/";
+				char[] anyOf = target.ToCharArray();
+
+				int indexL = vyraz.Substring(0, index).LastIndexOfAny(anyOf);
+				double cislo1;
+				if (indexL == -1)
+				{
+					cislo1 = Convert.ToDouble(vyraz.Substring(indexL + 1, index - indexL - 1));
+				}
+				else
+				{
+					if (vyraz[indexL] == '-' || vyraz[indexL] == '+')
+					{
+						cislo1 = Convert.ToDouble(vyraz.Substring(indexL, index - indexL));
+						indexL--;
+					}
+					else
+					{
+						cislo1 = Convert.ToDouble(vyraz.Substring(indexL + 1, index - indexL - 1));
+					}
+				}
+
+				string tmp = vyraz.Substring(index, vyraz.Length - index);
+				int indexR;
+				if (tmp[1] == '-' || tmp[1] == '+')
+				{
+					indexR = tmp.IndexOfAny(anyOf, 2);
+				}
+				else
+				{
+					indexR = tmp.IndexOfAny(anyOf, 1);
+				}
+				
+				if (indexR == -1)
+					indexR = tmp.Length;
+				tmp = tmp.Substring(1, indexR - 1);
+				double cislo2 = Convert.ToDouble(tmp);
+				vyraz = vyraz.Remove(indexL + 1, indexR + index - indexL - 1);
+				double vys = math.Nasob(cislo1, cislo2);
+				vyraz = vyraz.Insert(indexL + 1, vys.ToString());
+				if (vys >= 0)
+				{
+					vyraz = vyraz.Insert(indexL + 1, "+");
+				}
+			}
+			while (vyraz.Contains('/'))
+			{
+				int index = vyraz.IndexOf('/');
+
+				string target = "+-*/";
+				char[] anyOf = target.ToCharArray();
+
+				int indexL = vyraz.Substring(0, index).LastIndexOfAny(anyOf);
+				double cislo1;
+				if (indexL == -1)
+				{
+					cislo1 = Convert.ToDouble(vyraz.Substring(indexL + 1, index - indexL - 1));
+				}
+				else
+				{
+					if (vyraz[indexL] == '-' || vyraz[indexL]=='+')
+					{
+						cislo1 = Convert.ToDouble(vyraz.Substring(indexL, index - indexL));
+						indexL--;
+					}
+					else
+					{
+						cislo1 = Convert.ToDouble(vyraz.Substring(indexL + 1, index - indexL - 1));
+					}
+				}
+
+
+
+				string tmp = vyraz.Substring(index, vyraz.Length - index);
+				int indexR;
+				if (tmp[1] == '-' || tmp[1]=='+')
+				{
+					indexR = tmp.IndexOfAny(anyOf, 2);
+				}
+				else
+				{
+					indexR = tmp.IndexOfAny(anyOf, 1);
+				}
+
+
+				if (indexR == -1)
+					indexR = tmp.Length;
+				tmp = tmp.Substring(1, indexR - 1);
+				double cislo2 = Convert.ToDouble(tmp);
+				vyraz = vyraz.Remove(indexL + 1, indexR + index - indexL - 1);
+				double vys = math.Podil(cislo1, cislo2);
+				vyraz = vyraz.Insert(indexL + 1, (vys).ToString());
+				if (vys >= 0)
+				{
+					
+					vyraz = vyraz.Insert(indexL + 1, "+");
+				}
+			}
+			while (vyraz.Contains('+'))
+			{
+				string target = "+-*/";
+				char[] anyOf = target.ToCharArray();
+				int index = vyraz.IndexOf('+');
+				if (index == 0)
+				{
+					vyraz = vyraz.Remove(0, 1);
+					continue;
+				}
+
+				int indexL = vyraz.Substring(0, index).LastIndexOfAny(anyOf);
+				double cislo1;
+				if (indexL == -1)
+				{
+					cislo1 = Convert.ToDouble(vyraz.Substring(indexL + 1, index - indexL - 1));
+				}
+				else
+				{
+					if (vyraz[indexL] == '-' || vyraz[indexL] == '+')
+					{
+						cislo1 = Convert.ToDouble(vyraz.Substring(indexL, index - indexL));
+						indexL--;
+					}
+					else
+					{
+						cislo1 = Convert.ToDouble(vyraz.Substring(indexL + 1, index - indexL - 1));
+					}
+				}
+
+
+
+				string tmp = vyraz.Substring(index, vyraz.Length - index);
+				int indexR;
+				if (tmp[1] == '-' || tmp[1] == '+')
+				{
+					indexR = tmp.IndexOfAny(anyOf, 2);
+				}
+				else
+				{
+					indexR = tmp.IndexOfAny(anyOf, 1);
+				}
+
+				if (indexR == -1)
+					indexR = tmp.Length;
+				tmp = tmp.Substring(1, indexR - 1);
+				double cislo2 = Convert.ToDouble(tmp);
+				vyraz = vyraz.Remove(indexL + 1, indexR + index - indexL - 1);
+				double vys = math.Soucet(cislo1, cislo2);
+				vyraz = vyraz.Insert(indexL + 1, (vys).ToString());
+				if (vys >= 0)
+				{
+					vyraz = vyraz.Insert(indexL + 1, "+");
+				}
+
+
+			}
+			while (vyraz.Contains('-'))
+			{
+				int index = vyraz.IndexOf('-');
+				int count = vyraz.Split('-').Length - 1;
+
+				if (index == 0)
+				{
+					index = vyraz.IndexOf('-', index + 1);
+				}
+
+				if (count == 1 && vyraz[0] == '-')
+					return vyraz;
+				string target = "+-*/";
+				char[] anyOf = target.ToCharArray();
+
+				if (index == 0)
+				{
+					vyraz = vyraz.Remove(0, 1);
+					continue;
+				}
+
+				int indexL = vyraz.Substring(0, index).LastIndexOfAny(anyOf);
+				double cislo1;
+				if (indexL == -1)
+				{
+					cislo1 = Convert.ToDouble(vyraz.Substring(indexL + 1, index - indexL - 1));
+				}
+				else
+				{
+					if (vyraz[indexL] == '-' || vyraz[indexL] == '+')
+					{
+						cislo1 = Convert.ToDouble(vyraz.Substring(indexL, index - indexL));
+						indexL--;
+					}
+					else
+					{
+						cislo1 = Convert.ToDouble(vyraz.Substring(indexL + 1, index - indexL - 1));
+					}
+				}
+
+
+
+				string tmp = vyraz.Substring(index, vyraz.Length - index);
+				int indexR;
+				if (tmp[1] == '-' || tmp[1] == '+')
+				{
+					indexR = tmp.IndexOfAny(anyOf, 2);
+				}
+				else
+				{
+					indexR = tmp.IndexOfAny(anyOf, 1);
+				}
+
+				if (indexR == -1)
+					indexR = tmp.Length;
+				tmp = tmp.Substring(1, indexR - 1);
+				double cislo2 = Convert.ToDouble(tmp);
+				vyraz = vyraz.Remove(indexL + 1, indexR + index - indexL - 1);
+				double vys = math.Rozdil(cislo1, cislo2);
+				vyraz = vyraz.Insert(indexL + 1, (vys).ToString());
+				if ((vys) >= 0)
+				{
+					vyraz = vyraz.Insert(indexL + 1, "+");
+				}
+
+			}
+			return vyraz;
+		}
+
 	}
 }
