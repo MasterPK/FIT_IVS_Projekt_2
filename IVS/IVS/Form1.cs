@@ -405,9 +405,30 @@ namespace IVS
 			}
 		}
 
-		private double odchylka_x()
+
+		private double odchylka_s(uint N, double[] pole)
 		{
-            return 0;
+			double tmp = math.Podil(1, math.Rozdil(N,1));
+			double soucet = 0;
+			for (uint i = 0; i < N; i++)
+			{
+				soucet += math.Umocnit(pole[i], 2);
+			}
+			soucet -= math.Nasob(N, math.Umocnit(odchylka_s(N, pole), 2));
+			tmp = math.Nasob(tmp, soucet);
+			tmp = math.Odmocnina(tmp, 2);
+			return tmp;
+		}
+
+		private double odchylka_x(uint N,double[] pole)
+		{
+			double tmp = math.Podil(1, N);
+			double soucet = 0;
+			for (uint i = 0; i < N; i++)
+			{
+				soucet+= pole[i];
+			}
+			return math.Nasob(tmp, soucet);
 		}
 
 		private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
