@@ -21,8 +21,8 @@ namespace IVS
         private void Calculator_Load(object sender, EventArgs e)
         {
 			//MessageBox.Show(math.Zpracovat_Vyraz("-1-1-1+1+1+1+5*5-5*5*-5/+1/-5"));//==0 FUNGUJE!!! 
-			double[] pole = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-			MessageBox.Show(odchylka_s(10,pole).ToString());
+			//double[] pole = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+			//MessageBox.Show(odchylka_s(10,pole).ToString());
 		}
 
         /// <summary>
