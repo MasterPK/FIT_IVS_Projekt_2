@@ -204,6 +204,14 @@ namespace MathLibrary
 			return vyraz;
 		}
 
+		/// <summary>
+		/// Zpracovava sub vyraz, to znamena ze dostane cely vyraz, operator a zarážky
+		/// najde ve vyrazu prvni vyskyt operatoru, pote naparsuje leve a prave cislo dle zarazek, provede mat operaci a vrati upraveny string
+		/// </summary>
+		/// <param name="vyraz"></param>
+		/// <param name="op"></param>
+		/// <param name="target"></param>
+		/// <returns></returns>
 		private static string Zpracovat_Sub_Vyraz(string vyraz, char op,string target)
 		{
 
