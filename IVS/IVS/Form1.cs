@@ -21,6 +21,8 @@ namespace IVS
         private void Calculator_Load(object sender, EventArgs e)
         {
 			//MessageBox.Show(math.Zpracovat_Vyraz("-1-1-1+1+1+1+5*5-5*5*-5/+1/-5"));//==0 FUNGUJE!!! 
+			double[] pole = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+			MessageBox.Show(odchylka_s(10,pole).ToString());
 		}
 
         /// <summary>
@@ -415,25 +417,25 @@ namespace IVS
 		}
 
 
-		private double odchylka_s(uint N, double[] pole)
+		private double odchylka_s(int N, double[] pole)
 		{
 			double tmp = math.Podil(1, math.Rozdil(N,1));
 			double soucet = 0;
-			for (uint i = 0; i < N; i++)
+			for (int i = 0; i < N; i++)
 			{
 				soucet += math.Umocnit(pole[i], 2);
 			}
-			soucet -= math.Nasob(N, math.Umocnit(odchylka_s(N, pole), 2));
+			soucet -= math.Nasob(N, math.Umocnit(odchylka_x(N, pole), 2));
 			tmp = math.Nasob(tmp, soucet);
 			tmp = math.Odmocnina(tmp, 2);
 			return tmp;
 		}
 
-		private double odchylka_x(uint N,double[] pole)
+		private double odchylka_x(int N,double[] pole)
 		{
 			double tmp = math.Podil(1, N);
 			double soucet = 0;
-			for (uint i = 0; i < N; i++)
+			for (int i = 0; i < N; i++)
 			{
 				soucet+= pole[i];
 			}
