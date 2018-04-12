@@ -14,8 +14,11 @@ namespace IVS
     public partial class Testy : Form
     { //Kod pro testy
 
-        static int chyby = 0;
+        static int chyby = 0;//pocet chyb
 
+        /// <summary>
+        /// Vytvoreni noveho objektu, provedeni testu
+        /// </summary>
         public Testy()
         {
             InitializeComponent();
@@ -144,7 +147,7 @@ namespace IVS
             };
             richTextBox1.AppendText("Pocet Chyb:" + chyby + ":::\r\n\r\n");*/
 
-            //testy pro Umocnit
+            //testy pro Tangens
 
             richTextBox1.AppendText(":::Testy Tangens:::");
             chyby = 0;
@@ -163,6 +166,11 @@ namespace IVS
             richTextBox1.AppendText("::::::::::::::::::::::::::::::::::::\r\n::Konec testu matematicke knihovny::\r\n::::::::::::::::::::::::::::::::::::\r\n\r\n");
         }
 
+        /// <summary>
+		/// Očekává rovnost, výsledek vypíše
+		/// </summary>
+		/// <param name="a">double</param>
+        /// <param name="b">double</param>
         void ExpectEQ(double a, double b)
         {
             double odchylka = 0.00000000000001;
@@ -178,6 +186,12 @@ namespace IVS
             }
             richTextBox1.AppendText("Ocekavany vysledek:" + a + " / Realny vysledek:" + b);
         }
+
+        /// <summary>
+        /// Očekává nerovnost, výsledek vypíše
+        /// </summary>
+        /// <param name="a">double</param>
+        /// <param name="b">double</param>
         void ExpectNEQ(double a, double b)
         {
             double odchylka = 0.00000000000001;
@@ -194,9 +208,27 @@ namespace IVS
             richTextBox1.AppendText("Ocekavany vysledek:" + a + " / Realny vysledek:" + b);
         }
 
+        /// <summary>
+        /// Pro předání funkce jako parametr
+        /// </summary>
+        /// <param name="a">double</param>
+        /// <returns>int</returns>returns>
         delegate int Function(double a);
+
+        /// <summary>
+        /// Pro předání funkce jako parametr
+        /// </summary>
+        /// <param name="a">double</param>
+        /// <param name="b">double</param>
+        /// <returns>double</returns>returns>
         delegate double Function2(double a, double b);
 
+        /// <summary>
+        /// Očekává vyjimku, výsledek vypíše
+        /// </summary>
+        /// <param name="funkce">funkce vracejici double ktera bere dva double parametry</param>
+        /// <param name="a">double</param>
+        /// <param name="b">double</param>
         void ExpectThrow (Function2 funkce,double a,double b)
         {
             try
@@ -210,7 +242,12 @@ namespace IVS
                 richTextBox1.AppendText("\r\nThrow Ocekavany vysledek: Throw / Realny vysledek: Throw");
             }
         }
-       
+
+        /// <summary>
+        /// Očekává vyjimku, výsledek vypíše
+        /// </summary>
+        /// <param name="funkce">funkce vracejici int, ktera bere double parametr</param>
+        /// <param name="a">double</param>
         void ExpectThrow(Function funkce, double a)
         {
             try
@@ -224,7 +261,13 @@ namespace IVS
                 richTextBox1.AppendText("\r\nThrow Ocekavany vysledek: Throw / Realny vysledek: Throw");
             }
         }
-        
+
+        /// <summary>
+        /// Očekává ze nenastane vyjimka, výsledek vypíše
+        /// </summary>
+        /// <param name="funkce">funkce vracejici double ktera bere dva double parametry</param>
+        /// <param name="a">double</param>
+        /// <param name="b">double</param>
         void ExpectNoThrow(Function2 funkce, double a, double b)
         {
             try
@@ -239,6 +282,11 @@ namespace IVS
             }
         }
 
+        /// <summary>
+        /// Očekává ze nenastane vyjimka, výsledek vypíše
+        /// </summary>
+        /// <param name="funkce">funkce vracejici int, ktera bere double parametr</param>
+        /// <param name="a">double</param>
         void ExpectNoThrow(Function funkce, double a)
         {
             try
