@@ -412,7 +412,7 @@ namespace IVS
 
 		private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
 		{
-			String sKeys = "1234567890+-*/^(),";
+			String sKeys = "1234567890+-*/^(),!";
 			if (!sKeys.Contains(e.KeyChar.ToString().ToUpper()))
 				e.Handled = true;
 		}
