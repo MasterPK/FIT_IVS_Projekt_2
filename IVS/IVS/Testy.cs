@@ -76,8 +76,8 @@ namespace IVS
             ExpectEQ(-2, math.Podil(13, -6.5));
             ExpectEQ(4.5, math.Podil(-9, -2));
             ExpectNEQ(4.5, math.Podil(9, -2));
-            ExpectThrow(math.Podil,5 , 0);
-            ExpectThrow(math.Podil, 0, 0);
+            ExpectThrow(math.Podil,5 , 0.0);
+            ExpectThrow(math.Podil, 0, 0.0);
             ExpectThrow(math.Podil, 5, 0.0000);
             richTextBox1.AppendText("\r\n:::Konec testu Podil:::");
             if (chyby != 0)
@@ -113,8 +113,7 @@ namespace IVS
             ExpectEQ(32, math.Umocnit(2, 5));
             ExpectEQ(1024, math.Umocnit(2, 10));
             ExpectEQ(1, math.Umocnit(5, 0));
-            ExpectNoThrow(math.Umocnit, 10, -1);
-            //ExpectEQ(0.1, math.Umocnit(10,-1));
+            ExpectThrow(math.Umocnit, 10,  -1.0);
             ExpectThrow(math.Umocnit, 2, 0.5);
             ExpectThrow(math.Umocnit, 2, 0.2);
             richTextBox1.AppendText("\r\n:::Konec testu Umocnit:::");
@@ -123,26 +122,24 @@ namespace IVS
                 chybneokruhy++;
             };
             richTextBox1.AppendText("Pocet Chyb:" + chyby + ":::\r\n\r\n");
-            /*
+
             //testy pro Odmocnina
             richTextBox1.AppendText(":::Testy Odmocnina:::");
             chyby = 0;
-            ExpectEQ(25, math.Umocnit(5, 2));
-            ExpectEQ(125, math.Umocnit(5, 3));
-            ExpectNEQ(25, math.Umocnit(2, 5));
-            ExpectEQ(32, math.Umocnit(2, 5));
-            ExpectEQ(1024, math.Umocnit(2, 10));
-            ExpectEQ(1, math.Umocnit(5, 0));
-            ExpectNoThrow(math.Umocnit, 10, -1);
-            //ExpectEQ(0.1, math.Umocnit(10,-1));
-            ExpectThrow(math.Umocnit, 2, 0.5);
-            ExpectThrow(math.Umocnit, 2, 0.2);
+            ExpectEQ(5, math.Odmocnina(25, 2));
+            ExpectEQ(5, math.Odmocnina(125, 3));
+            ExpectNEQ(25, math.Odmocnina(2, 5));
+            ExpectEQ(2, math.Odmocnina(1024, 10));
+            ExpectThrow(math.Odmocnina, 10, -1);
+            ExpectThrow(math.Odmocnina, -1, 2);
+            ExpectThrow(math.Odmocnina, -1, 0);
+            ExpectNoThrow(math.Odmocnina, 0, 3);
             richTextBox1.AppendText("\r\n:::Konec testu Odmocnina:::");
             if (chyby != 0)
             {
                 chybneokruhy++;
             };
-            richTextBox1.AppendText("Pocet Chyb:" + chyby + ":::\r\n\r\n");*/
+            richTextBox1.AppendText("Pocet Chyb:" + chyby + ":::\r\n\r\n");
 
             //testy pro Umocnit
 
@@ -158,6 +155,7 @@ namespace IVS
                 chybneokruhy++;
             };
             richTextBox1.AppendText("Pocet Chyb:" + chyby + ":::\r\n\r\n");
+
 
             richTextBox1.AppendText(":::::::::::::::::::::::::::::\r\n:::Pocet chybnych funkci:" + chybneokruhy + ":::\r\n");
             richTextBox1.AppendText("::::::::::::::::::::::::::::::::::::\r\n::Konec testu matematicke knihovny::\r\n::::::::::::::::::::::::::::::::::::\r\n\r\n");
@@ -196,6 +194,7 @@ namespace IVS
 
         delegate int Function(double a);
         delegate double Function2(double a, double b);
+        delegate double Function3(double a, int b);
 
         void ExpectThrow (Function2 funkce,double a,double b)
         {
@@ -210,7 +209,21 @@ namespace IVS
                 richTextBox1.AppendText("\r\nThrow Ocekavany vysledek: Throw / Realny vysledek: Throw");
             }
         }
-       
+
+        void ExpectThrow(Function3 funkce, double a, int b)
+        {
+            try
+            {
+                funkce(a, b);
+                chyby++;
+                richTextBox1.AppendText("\r\nChybaThrow Ocekavany vysledek: Throw / Realny vysledek: NoThrow");
+            }
+            catch
+            {
+                richTextBox1.AppendText("\r\nThrow Ocekavany vysledek: Throw / Realny vysledek: Throw");
+            }
+        }
+
         void ExpectThrow(Function funkce, double a)
         {
             try
@@ -226,6 +239,20 @@ namespace IVS
         }
         
         void ExpectNoThrow(Function2 funkce, double a, double b)
+        {
+            try
+            {
+                funkce(a, b);
+                richTextBox1.AppendText("\r\nThrow Ocekavany vysledek: NoThrow / Realny vysledek: NoThrow");
+            }
+            catch
+            {
+                chyby++;
+                richTextBox1.AppendText("\r\nChybaNoThrow Ocekavany vysledek: NoThrow / Realny vysledek: Throw");
+            }
+        }
+
+        void ExpectNoThrow(Function3 funkce, double a, int b)
         {
             try
             {
