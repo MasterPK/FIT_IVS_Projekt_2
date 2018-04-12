@@ -356,6 +356,19 @@ namespace IVS
 			{
 				button22.PerformClick();
 			}
+			if (e.KeyData == Keys.Back)
+			{
+				string s = textBox1.Text;
+
+				if (s.Length > 0)
+				{
+					s = s.Substring(0, s.Length -1);
+				}
+
+				textBox1.Text = s;
+				textBox1.SelectionStart = textBox1.Text.Length;
+				textBox1.SelectionLength = 0;
+			}
 		}
 
 		private double odchylka_x()

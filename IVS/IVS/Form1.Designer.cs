@@ -85,6 +85,8 @@
 			this.textBox1.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
 			this.textBox1.Location = new System.Drawing.Point(61, 44);
 			this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.textBox1.MaximumSize = new System.Drawing.Size(387, 36);
+			this.textBox1.MinimumSize = new System.Drawing.Size(387, 36);
 			this.textBox1.Name = "textBox1";
 			this.textBox1.Size = new System.Drawing.Size(387, 36);
 			this.textBox1.TabIndex = 2;
@@ -404,6 +406,8 @@
 			this.Controls.Add(this.button1);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.MaximumSize = new System.Drawing.Size(523, 531);
+			this.MinimumSize = new System.Drawing.Size(523, 531);
 			this.Name = "Calculator";
 			this.Text = "Calculator";
 			this.Load += new System.EventHandler(this.Calculator_Load);
