@@ -239,7 +239,7 @@ namespace IVS
                     if (text[i] == '(')
                     {
                         openIndex = i;
-                        if (char.IsDigit(text[i - 1]))
+                        if (i !=0 && char.IsDigit(text[i - 1]))
                         {
                             text = text.Insert(openIndex, "*");
                         }
