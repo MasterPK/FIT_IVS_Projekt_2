@@ -148,7 +148,7 @@ namespace MathLibrary
 
 
 		/// <summary>
-		/// Vypocita Tangens pomoci metody zretezeneho zlomku
+		/// Vypocita Tangens pomoci metody zretezeneho zlomku, nefunguje pro vsechny hodnoty
 		/// </summary>
 		/// <param name="x">Uhel v radianech</param>
 		/// <returns>´Vraci tangens s presnosti mensi jak 10^-8</returns>
@@ -164,13 +164,12 @@ namespace MathLibrary
 			return cf;
 		}
 		/// <summary>
-		/// Zpracovava jednoduchy vyraz (+-*/) podle matematickych priorit
+		/// Jednoduchy "wolfram", ktery zpracovava vyraz (+,-,*,/,^,√) podle priorit od nejvyssi (√,^,*,/,+,-), nepredpoklada nic jineho nez cisla a operatory ve spravnem formatu!
 		/// </summary>
 		/// <param name="vyraz">vyraz typu string</param>
 		/// <returns>vraci vysledek jako jedno cislo typu string (pro kompatibilitu s dalsimi funkcemi)</returns>
 		public static string Zpracovat_Vyraz(string vyraz)
 		{
-			//vyraz = "0" + vyraz;
 			while (vyraz.Contains('√'))
 			{
 				int index = vyraz.IndexOf('√');
