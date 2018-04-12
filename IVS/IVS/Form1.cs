@@ -254,17 +254,14 @@ namespace IVS
         {
             if (textBox1.Text.Contains('√'))
             {
-                if(textBox1.Text.Contains('/') || textBox1.Text.Contains('*') || textBox1.Text.Contains('+') || textBox1.Text.Contains('-') || textBox1.Text.Contains('^'))
+                int index = textBox1.Text.IndexOf('√');
+                if (char.IsDigit(textBox1.Text[index+1]) && char.IsDigit(textBox1.Text[index-1]))
                 {
-                    textBox1.Text = "Syntax Error!";
+                    textBox1.Text = math.Zpracovat_Vyraz(textBox1.Text);
                 }
                 else
                 {
-                    int index = textBox1.Text.IndexOf('√');
-                    string cislo = textBox1.Text.Substring(index+1, textBox1.Text.Length - index-1);
-                    string odmocnina = textBox1.Text.Substring(0, textBox1.Text.Length - index - cislo.Length);
-                    double vysledok = math.Odmocnina(Convert.ToDouble(cislo), Convert.ToInt16(odmocnina));
-                    textBox1.Text = vysledok.ToString();
+                    textBox1.Text = "Syntax Error!";
                 }
             }
             if(textBox1.Text.Contains('(') || textBox1.Text.Contains(')'))
