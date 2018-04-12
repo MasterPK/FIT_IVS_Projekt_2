@@ -287,7 +287,9 @@ namespace IVS
         {
             if (textBox1.Text.Contains('/') || textBox1.Text.Contains('*') || textBox1.Text.Contains('+') || textBox1.Text.Contains('-') || textBox1.Text.Contains('^'))
             {
-                textBox1.Text = "Syntax Error!";
+                string text = math.Zpracovat_Vyraz(textBox1.Text);
+                double cislo = Convert.ToDouble(text);
+                textBox1.Text = Convert.ToString(math.Tangens(cislo));
             }
             else
             {
@@ -305,7 +307,7 @@ namespace IVS
         {
             textBox1.Text = textBox1.Text.Remove(textBox1.Text.Length - 1);
         }
-
+        
         private void button24_Click(object sender, EventArgs e)
         {
 
