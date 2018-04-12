@@ -156,7 +156,7 @@ namespace MathLibrary
 		{
 			double cf = 0;
 			double b = 1;
-			for (int i = 15; i > 0; i--)
+			for (int i = 50; i > 0; i--)
 			{
 				double a = (2 * i - 1) / x;
 				cf = b / (a - cf);
