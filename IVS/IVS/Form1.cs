@@ -352,7 +352,22 @@ namespace IVS
 				textBox1.SelectionStart = textBox1.Text.Length ;
 				textBox1.SelectionLength = 0;
 			}
-				
+			if (e.KeyData == Keys.Delete)
+			{
+				button22.PerformClick();
+			}
+		}
+
+		private double odchylka_x()
+		{
+			return 0;
+		}
+
+		private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			String sKeys = "1234567890+-*/^(),";
+			if (!sKeys.Contains(e.KeyChar.ToString().ToUpper()))
+				e.Handled = true;
 		}
 	}
 }
