@@ -257,6 +257,10 @@ namespace IVS
         /// <param name="e"></param>
         private void button11_Click(object sender, EventArgs e)
         {
+            if(textBox1.Text == "")
+            {
+                return;
+            }
             string vystup="";
             if (textBox1.Text.Contains('√'))
             {
@@ -295,6 +299,10 @@ namespace IVS
         /// <param name="e"></param>
         private void button14_Click(object sender, EventArgs e)
         {
+            if(textBox1.Text == "")
+            {
+                return;
+            }
             if (textBox1.Text.Contains('/') || textBox1.Text.Contains('*') || textBox1.Text.Contains('+') || textBox1.Text.Contains('-') || textBox1.Text.Contains('^'))
             {
                 string text = math.Zpracovat_Vyraz(textBox1.Text);
