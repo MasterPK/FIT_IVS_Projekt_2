@@ -164,7 +164,7 @@ namespace MathLibrary
 			return cf;
 		}
 		/// <summary>
-		/// Jednoduchy "wolfram", ktery zpracovava vyraz (+,-,*,/,^,√)
+		/// Jednoduchy "wolfram", ktery zpracovava vyraz (+,-,*,/,^,√) podle priorit od nejvyssi (√,^,*,/,+,-), nepredpoklada zavorky!
 		/// </summary>
 		/// <param name="vyraz">vyraz typu string</param>
 		/// <returns>vraci vysledek jako jedno cislo typu string (pro kompatibilitu s dalsimi funkcemi)</returns>
