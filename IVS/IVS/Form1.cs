@@ -247,7 +247,22 @@ namespace IVS
         /// <param name="e"></param>
         private void button11_Click(object sender, EventArgs e)
         {
-            spracovanie_zatvorky(textBox1.Text);
+            if (textBox1.Text.Contains('√'))
+            {
+                if(textBox1.Text.Contains('/') || textBox1.Text.Contains('*') || textBox1.Text.Contains('+') || textBox1.Text.Contains('-') || textBox1.Text.Contains('^'))
+                {
+                    textBox1.Text = "Syntax Error!";
+                }
+                else
+                {
+                    int index = textBox1.Text.IndexOf('√');
+                    string cislo = textBox1.Text.Substring(index+1, textBox1.Text.Length - index-1);
+                    string odmocnina = textBox1.Text.Substring(0, textBox1.Text.Length - index - cislo.Length);
+                    double vysledok = math.Odmocnina(Convert.ToDouble(cislo), Convert.ToInt16(odmocnina));
+                    textBox1.Text = vysledok.ToString();
+                }
+            }
+            //spracovanie_zatvorky(textBox1.Text);
         }
 
         /// <summary>
@@ -292,6 +307,11 @@ namespace IVS
         {
             Form testy = new Testy();
             testy.Show();
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + "√";
         }
     }
 }
