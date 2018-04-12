@@ -380,15 +380,17 @@ namespace IVS
             testy.Show();
         }
 
+		/// <summary>
+		/// Zapis odmocniny do textbox
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
         private void button13_Click(object sender, EventArgs e)
         {
             textBox1.Text = textBox1.Text + "√";
         }
 
-		private void Calculator_KeyDown(object sender, KeyEventArgs e)
-		{
-
-		}
+		
 
 		/// <summary>
 		/// Kontroluje stisknuti Enter, Delete
@@ -409,7 +411,12 @@ namespace IVS
 			}
 		}
 
-
+		/// <summary>
+		/// Pocita smerodatnou odchylku
+		/// </summary>
+		/// <param name="N">Pocet cisel</param>
+		/// <param name="pole">Vstupni pole cisel</param>
+		/// <returns></returns>
 		private double odchylka_s(int N, double[] pole)
 		{
 			double tmp = math.Podil(1, math.Rozdil(N,1));
@@ -424,6 +431,12 @@ namespace IVS
 			return tmp;
 		}
 
+		/// <summary>
+		/// Mezivypocet smerodatne odchylky
+		/// </summary>
+		/// <param name="N"></param>
+		/// <param name="pole"></param>
+		/// <returns></returns>
 		private double odchylka_x(int N,double[] pole)
 		{
 			double tmp = math.Podil(1, N);
@@ -435,6 +448,11 @@ namespace IVS
 			return math.Nasob(tmp, soucet);
 		}
 
+		/// <summary>
+		/// Kontroluje jake znaky byly stisknuty, pokud jde o nepovoleny znak, je jeho zapis do textbox zrusen
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
 		{
 			String sKeys = "1234567890+-*/^(),!";
