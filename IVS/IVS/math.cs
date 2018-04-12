@@ -113,11 +113,11 @@ namespace MathLibrary
 			return vysledek;
 		}
 		/// <summary>
-		/// Pocita N-tou odmocninu pomoci kraceni mezi, presnost je 50 iteraci
+		/// Pocita N-tou odmocninu pomoci kraceni mezi, presnost je 500 iteraci
 		/// </summary>
 		/// <param name="x">Zaklad</param>
 		/// <param name="n">N-ta odmocnina</param>
-		/// <returns>Vraci odmocninu</returns>
+		/// <returns>Vraci odmocninu s presnosti mensi jak 10^-10</returns>
 		public static double Odmocnina(double x, int n)
 		{
 			if (Test_Int(n) == false || n < 0 || x < 0)
@@ -171,6 +171,55 @@ namespace MathLibrary
 		public static string Zpracovat_Vyraz(string vyraz)
 		{
 			//vyraz = "0" + vyraz;
+			while (vyraz.Contains('^'))
+			{
+				int index = vyraz.IndexOf('*');
+
+				string target = "+-*/";
+				char[] anyOf = target.ToCharArray();
+
+				int indexL = vyraz.Substring(0, index).LastIndexOfAny(anyOf);
+				double cislo1;
+				if (indexL == -1)
+				{
+					cislo1 = Convert.ToDouble(vyraz.Substring(indexL + 1, index - indexL - 1));
+				}
+				else
+				{
+					if (vyraz[indexL] == '-' || vyraz[indexL] == '+')
+					{
+						cislo1 = Convert.ToDouble(vyraz.Substring(indexL, index - indexL));
+						indexL--;
+					}
+					else
+					{
+						cislo1 = Convert.ToDouble(vyraz.Substring(indexL + 1, index - indexL - 1));
+					}
+				}
+
+				string tmp = vyraz.Substring(index, vyraz.Length - index);
+				int indexR;
+				if (tmp[1] == '-' || tmp[1] == '+')
+				{
+					indexR = tmp.IndexOfAny(anyOf, 2);
+				}
+				else
+				{
+					indexR = tmp.IndexOfAny(anyOf, 1);
+				}
+
+				if (indexR == -1)
+					indexR = tmp.Length;
+				tmp = tmp.Substring(1, indexR - 1);
+				double cislo2 = Convert.ToDouble(tmp);
+				vyraz = vyraz.Remove(indexL + 1, indexR + index - indexL - 1);
+				double vys = Umocnit(cislo1, cislo2);
+				vyraz = vyraz.Insert(indexL + 1, vys.ToString());
+				if (vys >= 0)
+				{
+					vyraz = vyraz.Insert(indexL + 1, "+");
+				}
+			}
 			while (vyraz.Contains('*'))
 			{
 				int index = vyraz.IndexOf('*');
