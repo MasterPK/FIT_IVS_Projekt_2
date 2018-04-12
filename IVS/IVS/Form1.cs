@@ -234,6 +234,10 @@ namespace IVS
                     if (text[i] == '(')
                     {
                         openIndex = i;
+                        if (char.IsDigit(text[i - 1]))
+                        {
+                            text = text.Insert(openIndex, "*");
+                        }
                     }
                     if (text[i] == ')')
                     {
@@ -293,7 +297,7 @@ namespace IVS
         }
 
         /// <summary>
-        /// tangens
+        /// Výpočet tangens zadaného vstupu
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -327,7 +331,7 @@ namespace IVS
         }
         
         /// <summary>
-        /// help
+        /// Spustí help
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
