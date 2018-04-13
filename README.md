@@ -1,6 +1,10 @@
 # FIT_IVS_Projekt_2
 
-Jednoduchá kalkulačka, která zvládá základní matematické operac s prioritami. Jako bonus zvládá funkci tangens a směrodatnou odchylku.
+Jednoduchá kalkulačka, která zvládá základní matematické operace s prioritami. Jako bonus zvládá funkci tangens a směrodatnou odchylku.
+
+[Nejnovější verze ke stažení zde](https://github.com/MasterPK/FIT_IVS_Projekt_2/releases/tag/0.1)
+
+Vývoj stále probíhá...
 
 Prostredi
 ---------
