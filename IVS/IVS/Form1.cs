@@ -297,7 +297,7 @@ namespace IVS
                         MessageBox.Show("Chyba vstupu! Zkontrolujte znamenka!", "Chyba!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return false;
                     }
-                    if (j != vstup.Length-1 && j != 0 && (vstup[j + 1] == '+' || vstup[j + 1] == '-' || vstup[j + 1] == ','))
+                    if (j != 0 && (vstup[j + 1] == '+' || vstup[j + 1] == '-' || vstup[j + 1] == ','))
                     {
                         MessageBox.Show("Chyba vstupu! Zkontrolujte znamenka!", "Chyba!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return false;
