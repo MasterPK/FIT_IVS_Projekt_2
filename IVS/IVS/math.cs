@@ -148,12 +148,16 @@ namespace MathLibrary
 
 
 		/// <summary>
-		/// Vypocita Tangens pomoci metody zretezeneho zlomku, nefunguje pro vsechny hodnoty
+		/// Vypocita Tangens pomoci metody zretezeneho zlomku, funguje presne jen v intervalu (-50,40)
 		/// </summary>
-		/// <param name="x">Uhel v radianech</param>
+		/// <param name="x">Uhel v radianech v rozsahu (-50,40)</param>
 		/// <returns>´Vraci tangens s presnosti mensi jak 10^-8</returns>
 		public static double Tangens(double x)
 		{
+			if (x < -50 || x > 40)
+			{
+				throw new ArgumentException();
+			}
 			double cf = 0;
 			double b = 1;
 			for (int i = 50; i > 0; i--)

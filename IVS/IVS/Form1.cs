@@ -420,12 +420,28 @@ namespace IVS
 			{
 				string text = math.Zpracovat_Vyraz(textBox1.Text);
 				double cislo = Convert.ToDouble(text);
-				textBox1.Text = Convert.ToString(math.Tangens(cislo));
+				try
+				{
+					textBox1.Text = Convert.ToString(math.Tangens(cislo));
+				}
+				catch (Exception ex)
+				{
+					MessageBox.Show("Chyba: " + ex.Message, "Chyba", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					return;
+				}
 			}
 			else
 			{
 				double cislo = Convert.ToDouble(textBox1.Text);
-				textBox1.Text = Convert.ToString(math.Tangens(cislo));
+				try
+				{
+					textBox1.Text = Convert.ToString(math.Tangens(cislo));
+				}
+				catch (Exception ex)
+				{
+					MessageBox.Show("Chyba: " + ex.Message, "Chyba", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					return;
+				}
 			}
 		}
 
