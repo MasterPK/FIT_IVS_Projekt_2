@@ -584,6 +584,11 @@ namespace IVS
 			textBox1.Text=odchylka_s(pocet_cisel, pole).ToString();
 
 		}
-	}
+
+        private void button26_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + ";";
+        }
+    }
 
 }
