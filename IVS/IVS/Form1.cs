@@ -280,6 +280,43 @@ namespace IVS
         }
 
         /// <summary>
+        /// Funkcia zistí či je vstup korektný
+        /// </summary>
+        /// <param name="vstup"></param>
+        /// <returns></returns>
+        private bool Vstup(string vstup)
+        {
+            int zatL = 0;
+            int zatP = 0;
+            for (int j = 0; j < vstup.Length; j++)
+            {
+                if (vstup[j] == '+' || vstup[j] == '-')
+                {
+                    if (j != 0 && (vstup[j + 1] == '+' || vstup[j + 1] == '-'))
+                    {
+                        MessageBox.Show("Chyba vstupu! Zkontrolujte znamenka!", "Chyba!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
+                    }
+                }
+                if (vstup[j] == '(')
+                {
+                    zatL++;
+                }
+                if (vstup[j] == ')')
+                {
+                    zatP++;
+                }
+
+            }
+            if (zatL != zatP)
+            {
+                MessageBox.Show("Chyba vstupu! Zkontrolujte závorky!", "Chyba!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
+        }
+
+        /// <summary>
         /// rovná sa =
         /// </summary>
         /// <param name="sender"></param>
@@ -296,31 +333,8 @@ namespace IVS
             }
             else
             {
-                int zatL = 0;
-                int zatP = 0;
-                for (int j = 0; j < textBox1.Text.Length; j++)
+                if(Vstup(textBox1.Text) == false)
                 {
-                    if (textBox1.Text[j] == '+' || textBox1.Text[j] == '-')
-                    {
-                        if(j != 0 && (textBox1.Text[j+1] == '+' || textBox1.Text[j + 1] == '-'))
-                        {
-                            MessageBox.Show("Chyba vstupu! Zkontrolujte znamenka!", "Chyba!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            return;
-                        }
-                    }
-                    if (textBox1.Text[j] == '(')
-                    {
-                        zatL++;
-                    }
-                    if (textBox1.Text[j] == ')')
-                    {
-                        zatP++;
-                    }
-
-                }
-                if(zatL != zatP)
-                {
-                    MessageBox.Show("Chyba vstupu! Zkontrolujte závorky!", "Chyba!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
             }
@@ -379,9 +393,20 @@ namespace IVS
         /// <param name="e"></param>
         private void button14_Click(object sender, EventArgs e)
         {
-            if(textBox1.Text == "")
+            if (textBox1.Text.Length == 1)
             {
                 return;
+            }
+            if (textBox1.Text == "")
+            {
+                return;
+            }
+            else
+            {
+                if (Vstup(textBox1.Text) == false)
+                {
+                    return;
+                }
             }
             if (textBox1.Text.Contains('/') || textBox1.Text.Contains('*') || textBox1.Text.Contains('+') || textBox1.Text.Contains('-') || textBox1.Text.Contains('^'))
             {
@@ -521,5 +546,7 @@ namespace IVS
         {
             textBox1.Text = textBox1.Text + "!";
         }
+
     }
+
 }
