@@ -482,5 +482,15 @@ namespace IVS
 			if (!sKeys.Contains(e.KeyChar.ToString().ToUpper()))
 				e.Handled = true;
 		}
-	}
+
+        /// <summary>
+        /// Faktorial
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button25_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + "!";
+        }
+    }
 }
