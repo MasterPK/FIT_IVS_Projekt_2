@@ -292,12 +292,12 @@ namespace IVS
             {
                 if (vstup[j] == '+' || vstup[j] == '-')
                 {
-                    if (j == vstup.Length-1 && (vstup[j - 1] == '+' || vstup[j - 1] == '-'))
+                    if (j == vstup.Length-1 && (vstup[j - 1] == '+' || vstup[j - 1] == '-' || vstup[j - 1] == ','))
                     {
                         MessageBox.Show("Chyba vstupu! Zkontrolujte znamenka!", "Chyba!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return false;
                     }
-                    if (j != 0 && (vstup[j + 1] == '+' || vstup[j + 1] == '-'))
+                    if (j != 0 && (vstup[j + 1] == '+' || vstup[j + 1] == '-' || vstup[j + 1] == ','))
                     {
                         MessageBox.Show("Chyba vstupu! Zkontrolujte znamenka!", "Chyba!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return false;
@@ -309,7 +309,10 @@ namespace IVS
                 }
                 if (vstup[j] == ')')
                 {
-                    zatP++;
+                    if(zatP == zatL - 1)
+                    {
+                        zatP++;
+                    }
                 }
 
             }
