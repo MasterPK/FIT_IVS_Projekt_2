@@ -235,6 +235,7 @@ namespace IVS
         {
             while (text.Contains('(') && text.Contains(')'))
             {
+                string vysledok = "";
                 int openIndex = 0;
                 int closeIndex = 0;
                 for (int i = 0; i < text.Length; i++)
@@ -252,13 +253,29 @@ namespace IVS
                         closeIndex = i;
                         string zatvorka = text.Substring(openIndex + 1, closeIndex - openIndex - 1);
                         text = text.Remove(openIndex, closeIndex - openIndex + 1);
-                        string vysledok = math.Zpracovat_Vyraz(zatvorka);
+                        try
+                        {
+                            vysledok = math.Zpracovat_Vyraz(zatvorka);
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Chyba vstupu! Zkontrolujte znaménka!", "Chyba!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return textBox1.Text;
+                        }
                         text = text.Insert(openIndex, vysledok);
                         i = 0;
                     }
                 }
             }
-            text = math.Zpracovat_Vyraz(text);
+            try
+            {
+                text = math.Zpracovat_Vyraz(text);
+            }
+            catch
+            {
+                MessageBox.Show("Chyba vstupu! Zkontrolujte znaménka!", "Chyba!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return textBox1.Text;
+            }
             return text;
         }
 
@@ -269,6 +286,10 @@ namespace IVS
         /// <param name="e"></param>
         private void button11_Click(object sender, EventArgs e)
         {
+            if(textBox1.Text.Length == 1)
+            {
+                return;
+            }
             if(textBox1.Text == "")
             {
                 return;
@@ -281,7 +302,7 @@ namespace IVS
                 {
                     if (textBox1.Text[j] == '+' || textBox1.Text[j] == '-')
                     {
-                        if(textBox1.Text[j+1] == '+' || textBox1.Text[j + 1] == '-')
+                        if(j != 0 && (textBox1.Text[j+1] == '+' || textBox1.Text[j + 1] == '-'))
                         {
                             MessageBox.Show("Chyba vstupu! Zkontrolujte znamenka!", "Chyba!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             return;
@@ -327,7 +348,16 @@ namespace IVS
             }
             else
             {
-			    vystup = math.Zpracovat_Vyraz(textBox1.Text);
+                try
+                {
+                    vystup = math.Zpracovat_Vyraz(textBox1.Text);
+                }
+                catch
+                {
+                    MessageBox.Show("Chyba vstupu! Zkontrolujte znaménka!", "Chyba!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+			    
 
             }
 
@@ -340,8 +370,6 @@ namespace IVS
             {
                 textBox1.Text = vystup;
             }
-
-
         }
 
         /// <summary>
