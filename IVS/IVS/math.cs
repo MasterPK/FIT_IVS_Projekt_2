@@ -118,7 +118,7 @@ namespace MathLibrary
 		/// <param name="x">Zaklad</param>
 		/// <param name="n">N-ta odmocnina</param>
 		/// <returns>Vraci odmocninu s presnosti mensi jak 10^-10</returns>
-		public static double Odmocnina(double x, double n)
+		public static double Odmocnina(double x, int n)
 		{
 			if (Test_Int(n) == false || n < 0 || x < 0)
 			{
