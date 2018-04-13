@@ -273,6 +273,36 @@ namespace IVS
             {
                 return;
             }
+            else
+            {
+                int zatL = 0;
+                int zatP = 0;
+                for (int j = 0; j < textBox1.Text.Length; j++)
+                {
+                    if (textBox1.Text[j] == '+' || textBox1.Text[j] == '-')
+                    {
+                        if(textBox1.Text[j+1] == '+' || textBox1.Text[j + 1] == '-')
+                        {
+                            MessageBox.Show("Chyba vstupu! Zkontrolujte znamenka!", "Chyba!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                    }
+                    if (textBox1.Text[j] == '(')
+                    {
+                        zatL++;
+                    }
+                    if (textBox1.Text[j] == ')')
+                    {
+                        zatP++;
+                    }
+
+                }
+                if(zatL != zatP)
+                {
+                    MessageBox.Show("Chyba vstupu! Zkontrolujte závorky!", "Chyba!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
             string vystup="";
             if (textBox1.Text.Contains('√'))
             {
@@ -297,15 +327,8 @@ namespace IVS
             }
             else
             {
-				try
-				{
-					vystup = math.Zpracovat_Vyraz(textBox1.Text);
-				}
-				catch
-				{
-					MessageBox.Show("Chyba vstupu! Zkontrolujte znamenka!", "Chyba!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-					return;
-				}
+			    vystup = math.Zpracovat_Vyraz(textBox1.Text);
+
             }
 
             if (vystup[0] == '+')
