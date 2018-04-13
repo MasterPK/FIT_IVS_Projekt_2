@@ -259,7 +259,7 @@ namespace IVS
                         }
                         catch
                         {
-                            MessageBox.Show("Chyba vstupu! Zkontrolujte znaménka!", "Chyba!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Chyba vstupu! Zkontrolujte operátory!", "Chyba!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             return textBox1.Text;
                         }
                         text = text.Insert(openIndex, vysledok);
@@ -273,7 +273,7 @@ namespace IVS
             }
             catch
             {
-                MessageBox.Show("Chyba vstupu! Zkontrolujte znaménka!", "Chyba!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Chyba vstupu! Zkontrolujte operátory!", "Chyba!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return textBox1.Text;
             }
             return text;
@@ -376,7 +376,7 @@ namespace IVS
                 }
                 catch
                 {
-                    MessageBox.Show("Chyba vstupu! Zkontrolujte znaménka!", "Chyba!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Chyba vstupu! Zkontrolujte operátory!", "Chyba!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 			    
