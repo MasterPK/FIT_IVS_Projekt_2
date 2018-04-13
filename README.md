@@ -10,7 +10,7 @@ Windows 64bit
 Autori
 ------
 
-Nazev tymu
+Pray4Kebab
 - xhorky28 Jakub Horký
 - xkrehl04 Petr Křehlík 
 - xklobu03 Martin Klobušický 
