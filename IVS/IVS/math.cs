@@ -227,7 +227,10 @@ namespace MathLibrary
 			}
 			if (op == '-')
 			{
-				
+				int count = vyraz.Split('-').Length - 1;
+				if (count == 1 && vyraz[0] == '-')
+					return vyraz;
+
 
 				if (index == 0)
 				{
