@@ -347,7 +347,7 @@ namespace MathLibrary
 			return vyraz;
 		}
 		/// <summary>
-		/// Pocita smerodatnou odchylku
+		/// Pocita vyberovou smerodatnou odchylku
 		/// </summary>
 		/// <param name="N">Pocet cisel</param>
 		/// <param name="pole">Vstupni pole cisel</param>
@@ -369,7 +369,7 @@ namespace MathLibrary
 		}
 
 		/// <summary>
-		/// Mezivypocet smerodatne odchylky
+		/// Mezivypocet vyberove smerodatne odchylky
 		/// </summary>
 		/// <param name="N"></param>
 		/// <param name="pole"></param>
