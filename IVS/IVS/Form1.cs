@@ -11,14 +11,14 @@ using MathLibrary;
 
 namespace IVS
 {
-	public partial class Calculator : Form
+	protected partial class Calculator : Form
 	{
-		public Calculator()
+		protected Calculator()
 		{
 			InitializeComponent();
 		}
 
-		private void Calculator_Load(object sender, EventArgs e)
+		protected void Calculator_Load(object sender, EventArgs e)
 		{
 			this.ActiveControl = textBox1;
 			//MessageBox.Show(math.Zpracovat_Vyraz("-1-1-1+1+1+1+5*5-5*5*-5/+1/-5"));//==0 FUNGUJE!!! 
@@ -31,7 +31,7 @@ namespace IVS
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void textBox1_TextChanged(object sender, EventArgs e)
+		protected void textBox1_TextChanged(object sender, EventArgs e)
 		{
 
 		}
@@ -41,7 +41,7 @@ namespace IVS
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void button4_Click(object sender, EventArgs e)
+		protected void button4_Click(object sender, EventArgs e)
 		{
 			textBox1.Text = textBox1.Text + "0";
 		}
@@ -51,7 +51,7 @@ namespace IVS
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void button15_Click(object sender, EventArgs e)
+		protected void button15_Click(object sender, EventArgs e)
 		{
 			textBox1.Text = textBox1.Text + "+";
 		}
@@ -61,7 +61,7 @@ namespace IVS
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void button20_Click(object sender, EventArgs e)
+		protected void button20_Click(object sender, EventArgs e)
 		{
 			textBox1.Text = textBox1.Text + "(";
 		}
@@ -71,7 +71,7 @@ namespace IVS
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void button1_Click(object sender, EventArgs e)
+		protected void button1_Click(object sender, EventArgs e)
 		{
 			textBox1.Text = textBox1.Text + "1";
 		}
@@ -81,7 +81,7 @@ namespace IVS
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void button2_Click(object sender, EventArgs e)
+		protected void button2_Click(object sender, EventArgs e)
 		{
 			textBox1.Text = textBox1.Text + "2";
 		}
@@ -91,7 +91,7 @@ namespace IVS
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void button3_Click(object sender, EventArgs e)
+		protected void button3_Click(object sender, EventArgs e)
 		{
 			textBox1.Text = textBox1.Text + "3";
 		}
@@ -101,7 +101,7 @@ namespace IVS
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void button5_Click(object sender, EventArgs e)
+		protected void button5_Click(object sender, EventArgs e)
 		{
 			textBox1.Text = textBox1.Text + "4";
 		}
@@ -111,7 +111,7 @@ namespace IVS
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void button6_Click(object sender, EventArgs e)
+		protected void button6_Click(object sender, EventArgs e)
 		{
 			textBox1.Text = textBox1.Text + "5";
 		}
@@ -121,7 +121,7 @@ namespace IVS
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void button7_Click(object sender, EventArgs e)
+		protected void button7_Click(object sender, EventArgs e)
 		{
 			textBox1.Text = textBox1.Text + "6";
 		}
@@ -131,7 +131,7 @@ namespace IVS
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void button8_Click(object sender, EventArgs e)
+		protected void button8_Click(object sender, EventArgs e)
 		{
 			textBox1.Text = textBox1.Text + "7";
 		}
@@ -141,7 +141,7 @@ namespace IVS
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void button9_Click(object sender, EventArgs e)
+		protected void button9_Click(object sender, EventArgs e)
 		{
 			textBox1.Text = textBox1.Text + "8";
 		}
@@ -151,7 +151,7 @@ namespace IVS
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void button10_Click(object sender, EventArgs e)
+		protected void button10_Click(object sender, EventArgs e)
 		{
 			textBox1.Text = textBox1.Text + "9";
 		}
@@ -161,7 +161,7 @@ namespace IVS
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void button21_Click(object sender, EventArgs e)
+		protected void button21_Click(object sender, EventArgs e)
 		{
 			textBox1.Text = textBox1.Text + ")";
 		}
@@ -171,7 +171,7 @@ namespace IVS
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void button22_Click(object sender, EventArgs e)
+		protected void button22_Click(object sender, EventArgs e)
 		{
 			textBox1.Clear();
 		}
@@ -181,7 +181,7 @@ namespace IVS
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void button19_Click(object sender, EventArgs e)
+		protected void button19_Click(object sender, EventArgs e)
 		{
 			textBox1.Text = textBox1.Text + ",";
 		}
@@ -191,7 +191,7 @@ namespace IVS
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void button16_Click(object sender, EventArgs e)
+		protected void button16_Click(object sender, EventArgs e)
 		{
 			textBox1.Text = textBox1.Text + "-";
 		}
@@ -201,7 +201,7 @@ namespace IVS
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void button17_Click(object sender, EventArgs e)
+		protected void button17_Click(object sender, EventArgs e)
 		{
 			textBox1.Text = textBox1.Text + "*";
 		}
@@ -211,7 +211,7 @@ namespace IVS
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void button18_Click(object sender, EventArgs e)
+		protected void button18_Click(object sender, EventArgs e)
 		{
 			textBox1.Text = textBox1.Text + "/";
 		}
@@ -221,7 +221,7 @@ namespace IVS
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void button12_Click(object sender, EventArgs e)
+		protected void button12_Click(object sender, EventArgs e)
 		{
 			textBox1.Text = textBox1.Text + "^";
 		}
@@ -231,7 +231,7 @@ namespace IVS
 		/// </summary>
 		/// <param name="text"></param>
 		/// <returns></returns>
-		private string spracovanie_zatvorky(string text)
+		protected string spracovanie_zatvorky(string text)
 		{
 			while (text.Contains('(') && text.Contains(')'))
 			{
@@ -284,7 +284,7 @@ namespace IVS
 		/// </summary>
 		/// <param name="vstup"></param>
 		/// <returns></returns>
-		private bool Vstup(string vstup)
+		protected bool Vstup(string vstup)
 		{
 			int zatL = 0;
 			int zatP = 0;
@@ -329,7 +329,7 @@ namespace IVS
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void button11_Click(object sender, EventArgs e)
+		protected void button11_Click(object sender, EventArgs e)
 		{
 			if (textBox1.Text.Length == 1)
 			{
@@ -399,7 +399,7 @@ namespace IVS
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void button14_Click(object sender, EventArgs e)
+		protected void button14_Click(object sender, EventArgs e)
 		{
 			if (textBox1.Text.Length == 1)
 			{
@@ -450,7 +450,7 @@ namespace IVS
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void button23_Click(object sender, EventArgs e)
+		protected void button23_Click(object sender, EventArgs e)
 		{
 			if (textBox1.Text.Length != 0)
 			{
@@ -463,7 +463,7 @@ namespace IVS
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void button24_Click(object sender, EventArgs e)
+		protected void button24_Click(object sender, EventArgs e)
 		{
 			Form napoveda = new napoveda();
 			napoveda.Show();
@@ -474,7 +474,7 @@ namespace IVS
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void Spusteni_testu_Click(object sender, EventArgs e)
+		protected void Spusteni_testu_Click(object sender, EventArgs e)
 		{
 			Form testy = new Testy();
 			testy.Show();
@@ -485,7 +485,7 @@ namespace IVS
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void button13_Click(object sender, EventArgs e)
+		protected void button13_Click(object sender, EventArgs e)
 		{
 			textBox1.Text = textBox1.Text + "√";
 		}
@@ -497,7 +497,7 @@ namespace IVS
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void textBox1_KeyDown(object sender, KeyEventArgs e)
+		protected void textBox1_KeyDown(object sender, KeyEventArgs e)
 		{
 			if (e.KeyData == Keys.Enter)
 			{
@@ -519,7 +519,7 @@ namespace IVS
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+		protected void textBox1_KeyPress(object sender, KeyPressEventArgs e)
 		{
 			String sKeys = "1234567890+-*/^(),!\b;";
 			if (!sKeys.Contains(e.KeyChar.ToString().ToUpper()))
@@ -531,12 +531,12 @@ namespace IVS
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void button25_Click(object sender, EventArgs e)
+		protected void button25_Click(object sender, EventArgs e)
 		{
 			textBox1.Text = textBox1.Text + "!";
 		}
 
-		private void SO_button_Click(object sender, EventArgs e)
+		protected void SO_button_Click(object sender, EventArgs e)
 		{
 			if (textBox1.TextLength < 1)
 			{
@@ -575,7 +575,7 @@ namespace IVS
 
 		}
 
-        private void button26_Click(object sender, EventArgs e)
+        protected void button26_Click(object sender, EventArgs e)
         {
             textBox1.Text = textBox1.Text + ";";
         }
