@@ -11,13 +11,18 @@ using MathLibrary;
 
 namespace IVS
 {
-	protected partial class Calculator : Form
+	public partial class Calculator : Form
 	{
-		protected Calculator()
+		public Calculator()
 		{
 			InitializeComponent();
 		}
 
+		/// <summary>
+		/// Pri nacteni formulare prepne focus na textbox
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		protected void Calculator_Load(object sender, EventArgs e)
 		{
 			this.ActiveControl = textBox1;
