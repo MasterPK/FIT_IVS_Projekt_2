@@ -354,6 +354,8 @@ namespace MathLibrary
 		/// <returns></returns>
 		public static double odchylka_s(int N, List<double> pole)
 		{
+			if (N <= 1)
+				throw new ArgumentOutOfRangeException();
 			double tmp = math.Podil(1, math.Rozdil(N, 1));
 			double soucet = 0;
 			for (int i = 0; i < N; i++)

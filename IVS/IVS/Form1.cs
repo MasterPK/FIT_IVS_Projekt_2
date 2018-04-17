@@ -376,7 +376,7 @@ namespace IVS
 				}
 				catch
 				{
-					MessageBox.Show("Chyba vstupu! Zkontrolujte znaménka!", "Chyba!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					MessageBox.Show("Chyba vstupu! Zkontrolujte znaménka, závorky a dělení nulou!", "Chyba!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 					return;
 				}
 
@@ -562,7 +562,16 @@ namespace IVS
 				}
 				pocet_cisel++;
 			}
-			textBox1.Text=math.odchylka_s(pocet_cisel, pole).ToString();
+			try
+			{
+				textBox1.Text = math.odchylka_s(pocet_cisel, pole).ToString();
+			}
+			catch(Exception ex)
+			{
+				MessageBox.Show("Chyba: " + ex.Message, "Chyba", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				return;
+			}
+			
 
 		}
 
