@@ -346,5 +346,41 @@ namespace MathLibrary
 
 			return vyraz;
 		}
+		/// <summary>
+		/// Pocita smerodatnou odchylku
+		/// </summary>
+		/// <param name="N">Pocet cisel</param>
+		/// <param name="pole">Vstupni pole cisel</param>
+		/// <returns></returns>
+		public static double odchylka_s(int N, List<double> pole)
+		{
+			double tmp = math.Podil(1, math.Rozdil(N, 1));
+			double soucet = 0;
+			for (int i = 0; i < N; i++)
+			{
+				soucet += math.Umocnit(pole[i], 2);
+			}
+			soucet -= math.Nasob(N, math.Umocnit(math.odchylka_x(N, pole), 2));
+			tmp = math.Nasob(tmp, soucet);
+			tmp = math.Odmocnina(tmp, 2);
+			return tmp;
+		}
+
+		/// <summary>
+		/// Mezivypocet smerodatne odchylky
+		/// </summary>
+		/// <param name="N"></param>
+		/// <param name="pole"></param>
+		/// <returns></returns>
+		private static double odchylka_x(int N, List<double> pole)
+		{
+			double tmp = math.Podil(1, N);
+			double soucet = 0;
+			for (int i = 0; i < N; i++)
+			{
+				soucet += pole[i];
+			}
+			return math.Nasob(tmp, soucet);
+		}
 	}
 }
