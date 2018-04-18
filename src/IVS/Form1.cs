@@ -390,7 +390,10 @@ namespace IVS
 
 
 			}
-
+            if (vystup == "")
+            {
+                return;
+            }
 			if (vystup[0] == '+')
 			{
 				vystup = vystup.Remove(0, 1);
