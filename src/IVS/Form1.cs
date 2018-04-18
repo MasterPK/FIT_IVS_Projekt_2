@@ -314,13 +314,16 @@ namespace IVS
 				}
 				if (vstup[j] == ')')
 				{
-					if (zatP == zatL - 1)
+					zatP++;
+					if (zatP == 1 && zatL==0)
 					{
-						zatP++;
+						MessageBox.Show("Chyba vstupu! Zkontrolujte závorky!", "Chyba!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+						return false;
 					}
 				}
 
 			}
+
 			if (zatL != zatP)
 			{
 				MessageBox.Show("Chyba vstupu! Zkontrolujte závorky!", "Chyba!", MessageBoxButtons.OK, MessageBoxIcon.Error);

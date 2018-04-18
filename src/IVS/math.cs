@@ -384,5 +384,6 @@ namespace MathLibrary
 			}
 			return math.Nasob(tmp, soucet);
 		}
+
 	}
 }
