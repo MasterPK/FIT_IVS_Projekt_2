@@ -10,6 +10,7 @@ namespace Smerodatna_odhylka
 	{
 		static void Main(string[] args)
 		{
+			Console.ReadLine();
 			//Console.WriteLine(args.Length);
 			//Console.WriteLine("Vypocet odchylky\nZadejte cisla oddelena ';' napr: '1,1;2;3;4;5;6'");
 			//string text = Console.ReadLine();

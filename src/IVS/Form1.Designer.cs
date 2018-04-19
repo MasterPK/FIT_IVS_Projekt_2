@@ -87,7 +87,7 @@
 			// 
 			this.textBox1.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
 			this.textBox1.Location = new System.Drawing.Point(61, 44);
-			this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.textBox1.Margin = new System.Windows.Forms.Padding(4);
 			this.textBox1.Name = "textBox1";
 			this.textBox1.Size = new System.Drawing.Size(463, 36);
 			this.textBox1.TabIndex = 2;
@@ -364,7 +364,7 @@
 			// Spusteni_testu
 			// 
 			this.Spusteni_testu.Location = new System.Drawing.Point(32, 9);
-			this.Spusteni_testu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.Spusteni_testu.Margin = new System.Windows.Forms.Padding(4);
 			this.Spusteni_testu.Name = "Spusteni_testu";
 			this.Spusteni_testu.Size = new System.Drawing.Size(100, 28);
 			this.Spusteni_testu.TabIndex = 25;
