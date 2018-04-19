@@ -252,6 +252,11 @@ namespace IVS
 						{
 							text = text.Insert(openIndex, "*");
 						}
+                        if (char.IsDigit(text[i + 1]) == false && text[i+1] != '-')
+                        {
+                            MessageBox.Show("Chyba vstupu! Zkontrolujte obsah zátvoriek!", "Chyba!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return textBox1.Text;
+                        }
 					}
 					if (text[i] == ')')
 					{
