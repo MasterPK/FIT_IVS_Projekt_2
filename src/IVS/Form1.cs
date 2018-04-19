@@ -11,428 +11,442 @@ using MathLibrary;
 
 namespace IVS
 {
-	public partial class Calculator : Form
-	{
-		public Calculator()
-		{
-			InitializeComponent();
-		}
+    public partial class Calculator : Form
+    {
+        public Calculator()
+        {
+            InitializeComponent();
+        }
 
-		/// <summary>
-		/// Pri nacteni formulare prepne focus na textbox
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		protected void Calculator_Load(object sender, EventArgs e)
-		{
-			this.ActiveControl = textBox1;
-			//MessageBox.Show(math.Zpracovat_Vyraz("-1-1-1+1+1+1+5*5-5*5*-5/+1/-5"));//==0 FUNGUJE!!! 
-			//double[] pole = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-			//MessageBox.Show(odchylka_s(10,pole).ToString());
-		}
+        /// <summary>
+        /// Pri nacteni formulare prepne focus na textbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void Calculator_Load(object sender, EventArgs e)
+        {
+            this.ActiveControl = textBox1;
+            //MessageBox.Show(math.Zpracovat_Vyraz("-1-1-1+1+1+1+5*5-5*5*-5/+1/-5"));//==0 FUNGUJE!!! 
+            //double[] pole = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            //MessageBox.Show(odchylka_s(10,pole).ToString());
+        }
 
-		/// <summary>
-		/// textbox na zadávanie vstupov
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		protected void textBox1_TextChanged(object sender, EventArgs e)
-		{
+        /// <summary>
+        /// textbox na zadávanie vstupov
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void textBox1_TextChanged(object sender, EventArgs e)
+        {
 
-		}
+        }
 
-		/// <summary>
-		/// Vloženie '0' do textového pola
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		protected void button4_Click(object sender, EventArgs e)
-		{
-			textBox1.Text = textBox1.Text + "0";
-		}
+        /// <summary>
+        /// Vloženie '0' do textového pola
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void button4_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + "0";
+        }
 
-		/// <summary>
-		/// Vloženie '+' do textového pola
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		protected void button15_Click(object sender, EventArgs e)
-		{
-			textBox1.Text = textBox1.Text + "+";
-		}
+        /// <summary>
+        /// Vloženie '+' do textového pola
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void button15_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + "+";
+        }
 
-		/// <summary>
-		/// vloženie '(' do textového pola
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		protected void button20_Click(object sender, EventArgs e)
-		{
-			textBox1.Text = textBox1.Text + "(";
-		}
+        /// <summary>
+        /// vloženie '(' do textového pola
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void button20_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + "(";
+        }
 
-		/// <summary>
-		/// Vloženie '1' do textového pola
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		protected void button1_Click(object sender, EventArgs e)
-		{
-			textBox1.Text = textBox1.Text + "1";
-		}
+        /// <summary>
+        /// Vloženie '1' do textového pola
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void button1_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + "1";
+        }
 
-		/// <summary>
-		/// Vloženie '2' do textového pola
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		protected void button2_Click(object sender, EventArgs e)
-		{
-			textBox1.Text = textBox1.Text + "2";
-		}
+        /// <summary>
+        /// Vloženie '2' do textového pola
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void button2_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + "2";
+        }
 
-		/// <summary>
-		/// Vloženie '3' do textového pola
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		protected void button3_Click(object sender, EventArgs e)
-		{
-			textBox1.Text = textBox1.Text + "3";
-		}
+        /// <summary>
+        /// Vloženie '3' do textového pola
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void button3_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + "3";
+        }
 
-		/// <summary>
-		/// Vloženie '4' do textového pola
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		protected void button5_Click(object sender, EventArgs e)
-		{
-			textBox1.Text = textBox1.Text + "4";
-		}
+        /// <summary>
+        /// Vloženie '4' do textového pola
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void button5_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + "4";
+        }
 
-		/// <summary>
-		/// Vloženie '5' do textového pola
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		protected void button6_Click(object sender, EventArgs e)
-		{
-			textBox1.Text = textBox1.Text + "5";
-		}
+        /// <summary>
+        /// Vloženie '5' do textového pola
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void button6_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + "5";
+        }
 
-		/// <summary>
-		/// Vloženie '6' do textového pola
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		protected void button7_Click(object sender, EventArgs e)
-		{
-			textBox1.Text = textBox1.Text + "6";
-		}
+        /// <summary>
+        /// Vloženie '6' do textového pola
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void button7_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + "6";
+        }
 
-		/// <summary>
-		/// Vloženie '7' do textového pola
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		protected void button8_Click(object sender, EventArgs e)
-		{
-			textBox1.Text = textBox1.Text + "7";
-		}
+        /// <summary>
+        /// Vloženie '7' do textového pola
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void button8_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + "7";
+        }
 
-		/// <summary>
-		/// Vloženie '8' do textového pola
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		protected void button9_Click(object sender, EventArgs e)
-		{
-			textBox1.Text = textBox1.Text + "8";
-		}
+        /// <summary>
+        /// Vloženie '8' do textového pola
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void button9_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + "8";
+        }
 
-		/// <summary>
-		/// Vloženie '9' do textového pola
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		protected void button10_Click(object sender, EventArgs e)
-		{
-			textBox1.Text = textBox1.Text + "9";
-		}
+        /// <summary>
+        /// Vloženie '9' do textového pola
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void button10_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + "9";
+        }
 
-		/// <summary>
-		/// Vloženie ')' do textového pola
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		protected void button21_Click(object sender, EventArgs e)
-		{
-			textBox1.Text = textBox1.Text + ")";
-		}
+        /// <summary>
+        /// Vloženie ')' do textového pola
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void button21_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + ")";
+        }
 
-		/// <summary>
-		/// Vyčistenie textového pola
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		protected void button22_Click(object sender, EventArgs e)
-		{
-			textBox1.Clear();
-		}
+        /// <summary>
+        /// Vyčistenie textového pola
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void button22_Click(object sender, EventArgs e)
+        {
+            textBox1.Clear();
+        }
 
-		/// <summary>
-		/// Vloženie ',' do textového pola
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		protected void button19_Click(object sender, EventArgs e)
-		{
-			textBox1.Text = textBox1.Text + ",";
-		}
+        /// <summary>
+        /// Vloženie ',' do textového pola
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void button19_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + ",";
+        }
 
-		/// <summary>
-		/// Vloženie '-' do textového pola
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		protected void button16_Click(object sender, EventArgs e)
-		{
-			textBox1.Text = textBox1.Text + "-";
-		}
+        /// <summary>
+        /// Vloženie '-' do textového pola
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void button16_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + "-";
+        }
 
-		/// <summary>
-		/// Vloženie 'x' do textového pola
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		protected void button17_Click(object sender, EventArgs e)
-		{
-			textBox1.Text = textBox1.Text + "*";
-		}
+        /// <summary>
+        /// Vloženie 'x' do textového pola
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void button17_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + "*";
+        }
 
-		/// <summary>
-		/// Vloženie '/' do textového pola
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		protected void button18_Click(object sender, EventArgs e)
-		{
-			textBox1.Text = textBox1.Text + "/";
-		}
+        /// <summary>
+        /// Vloženie '/' do textového pola
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void button18_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + "/";
+        }
 
-		/// <summary>
-		/// Vloženie '^' do textového pola
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		protected void button12_Click(object sender, EventArgs e)
-		{
-			textBox1.Text = textBox1.Text + "^";
-		}
+        /// <summary>
+        /// Vloženie '^' do textového pola
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void button12_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + "^";
+        }
 
-		/// <summary>
-		/// funkcia spracuje a odstráni zátvorky
-		/// </summary>
-		/// <param name="text"></param>
-		/// <returns></returns>
-		protected string spracovanie_zatvorky(string text)
-		{
-			while (text.Contains('(') && text.Contains(')'))
-			{
-				string vysledok = "";
-				int openIndex = 0;
-				int closeIndex = 0;
-				for (int i = 0; i < text.Length; i++)
-				{
-					if (text[i] == '(')
-					{
-						openIndex = i;
-						if (i != 0 && char.IsDigit(text[i - 1]))
-						{
-							text = text.Insert(openIndex, "*");
-						}
-                        if (char.IsDigit(text[i + 1]) == false && text[i+1] != '-')
+        /// <summary>
+        /// funkcia spracuje a odstráni zátvorky
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns></returns>
+        protected string spracovanie_zatvorky(string text)
+        {
+            while (text.Contains('(') && text.Contains(')'))
+            {
+                string vysledok = "";
+                int openIndex = 0;
+                int closeIndex = 0;
+                for (int i = 0; i < text.Length; i++)
+                {
+                    if (text[i] == '(')
+                    {
+                        openIndex = i;
+                        if (char.IsDigit(text[i + 1]) == false && text[i + 1] != '-')
                         {
                             MessageBox.Show("Chyba vstupu! Zkontrolujte obsah zátvoriek!", "Chyba!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             return textBox1.Text;
                         }
-					}
-					if (text[i] == ')')
-					{
-						closeIndex = i;
-						string zatvorka = text.Substring(openIndex + 1, closeIndex - openIndex - 1);
-						text = text.Remove(openIndex, closeIndex - openIndex + 1);
-						try
-						{
-							vysledok = math.Zpracovat_Vyraz(zatvorka);
-						}
-						catch
-						{
-							MessageBox.Show("Chyba vstupu! Zkontrolujte znaménka!", "Chyba!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-							return textBox1.Text;
-						}
-						text = text.Insert(openIndex, vysledok);
-						i = 0;
-					}
-				}
-			}
-			try
-			{
-				text = math.Zpracovat_Vyraz(text);
-			}
-			catch
-			{
-				MessageBox.Show("Chyba vstupu! Zkontrolujte znaménka!", "Chyba!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-				return textBox1.Text;
-			}
-			return text;
-		}
+                        if (i != 0 && char.IsDigit(text[i - 1]))
+                        {
+                            text = text.Insert(openIndex, "*");
+                        }
+                    }
+                    if (text[i] == ')')
+                    {
+                        closeIndex = i;
+                        string zatvorka = text.Substring(openIndex + 1, closeIndex - openIndex - 1);
+                        text = text.Remove(openIndex, closeIndex - openIndex + 1);
+                        try
+                        {
+                            vysledok = math.Zpracovat_Vyraz(zatvorka);
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Chyba vstupu! Zkontrolujte znaménka!", "Chyba!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return textBox1.Text;
+                        }
+                        text = text.Insert(openIndex, vysledok);
+                        i = 0;
+                    }
+                }
+            }
+            try
+            {
+                text = math.Zpracovat_Vyraz(text);
+            }
+            catch
+            {
+                MessageBox.Show("Chyba vstupu! Zkontrolujte znaménka!", "Chyba!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return textBox1.Text;
+            }
+            return text;
+        }
 
-		/// <summary>
-		/// Funkcia zistí či je vstup korektný
-		/// </summary>
-		/// <param name="vstup"></param>
-		/// <returns></returns>
-		protected bool Vstup(string vstup)
-		{
-			int zatL = 0;
-			int zatP = 0;
-			for (int j = 0; j < vstup.Length; j++)
-			{
-				if (vstup[j] == '+' || vstup[j] == '-')
-				{
-					if (j == vstup.Length - 1 && (vstup[j - 1] == '+' || vstup[j - 1] == '-' || vstup[j - 1] == ','))
-					{
-						MessageBox.Show("Chyba vstupu! Zkontrolujte znamenka!", "Chyba!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-						return false;
-					}
-					if (j != vstup.Length - 1 && j != 0 && (vstup[j + 1] == '+' || vstup[j + 1] == '-' || vstup[j + 1] == ','))
-					{
-						MessageBox.Show("Chyba vstupu! Zkontrolujte znamenka!", "Chyba!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-						return false;
-					}
-				}
-				if (vstup[j] == '(')
-				{
-					zatL++;
-				}
-				if (vstup[j] == ')')
-				{
-					zatP++;
-					if (zatP == 1 && zatL==0)
-					{
-						MessageBox.Show("Chyba vstupu! Zkontrolujte závorky!", "Chyba!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-						return false;
-					}
-				}
+        /// <summary>
+        /// Funkcia zistí či je vstup korektný
+        /// </summary>
+        /// <param name="vstup"></param>
+        /// <returns></returns>
+        protected bool Vstup(string vstup)
+        {
+            int zatL = 0;
+            int zatP = 0;
+            for (int j = 0; j < vstup.Length; j++)
+            {
+                if (vstup[j] == '+' || vstup[j] == '-')
+                {
+                    if (j == vstup.Length - 1 && (vstup[j - 1] == '+' || vstup[j - 1] == '-' || vstup[j - 1] == ','))
+                    {
+                        MessageBox.Show("Chyba vstupu! Zkontrolujte znamenka!", "Chyba!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
+                    }
+                    if (j != vstup.Length - 1 && j != 0 && (vstup[j + 1] == '+' || vstup[j + 1] == '-' || vstup[j + 1] == ','))
+                    {
+                        MessageBox.Show("Chyba vstupu! Zkontrolujte znamenka!", "Chyba!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
+                    }
+                }
+                if (vstup[j] == '(')
+                {
+                    zatL++;
+                }
+                if (vstup[j] == ')')
+                {
+                    zatP++;
+                    if (zatP == 1 && zatL == 0)
+                    {
+                        MessageBox.Show("Chyba vstupu! Zkontrolujte závorky!", "Chyba!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
+                    }
+                }
 
-			}
+            }
 
-			if (zatL != zatP)
-			{
-				MessageBox.Show("Chyba vstupu! Zkontrolujte závorky!", "Chyba!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-				return false;
-			}
-			return true;
-		}
+            if (zatL != zatP)
+            {
+                MessageBox.Show("Chyba vstupu! Zkontrolujte závorky!", "Chyba!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
+        }
 
-		/// <summary>
-		/// rovná sa =
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		protected void button11_Click(object sender, EventArgs e)
-		{
-			if (textBox1.Text.Length == 1)
-			{
-				return;
-			}
-			if (textBox1.Text == "")
-			{
-				return;
-			}
-			else
-			{
-				if (Vstup(textBox1.Text) == false)
-				{
-					return;
-				}
-			}
-			string vystup = "";
-			if (textBox1.Text.Contains('√'))
-			{
-				for (int i = 0; i < textBox1.Text.Length; i++)
-				{
-					if (textBox1.Text[i] == '√')
-					{
-						if (i == 0)
-						{
-							textBox1.Text = textBox1.Text.Insert(i, "2");
-						}
-						if (i != 0 && char.IsDigit(textBox1.Text[i - 1]) == false)
-						{
-							textBox1.Text = textBox1.Text.Insert(i, "2");
-						}
-					}
-				}
-			}
-			if (textBox1.Text.Contains('(') || textBox1.Text.Contains(')'))
-			{
-				vystup = spracovanie_zatvorky(textBox1.Text);
-			}
-			else
-			{
-				try
-				{
-					vystup = math.Zpracovat_Vyraz(textBox1.Text);
-				}
-				catch
-				{
-					MessageBox.Show("Chyba vstupu! Zkontrolujte znaménka, závorky a dělení nulou!", "Chyba!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-					return;
-				}
+        /// <summary>
+        /// rovná sa =
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void button11_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text.Length == 1)
+            {
+                return;
+            }
+            if (textBox1.Text == "")
+            {
+                return;
+            }
+            else
+            {
+                if (Vstup(textBox1.Text) == false)
+                {
+                    return;
+                }
+            }
+            string vystup = "";
+            if (textBox1.Text.Contains('√'))
+            {
+                for (int i = 0; i < textBox1.Text.Length; i++)
+                {
+                    if (textBox1.Text[i] == '√')
+                    {
+                        if (i == 0)
+                        {
+                            textBox1.Text = textBox1.Text.Insert(i, "2");
+                        }
+                        if (i != 0 && char.IsDigit(textBox1.Text[i - 1]) == false)
+                        {
+                            textBox1.Text = textBox1.Text.Insert(i, "2");
+                        }
+                    }
+                }
+            }
+            if (textBox1.Text.Contains('(') || textBox1.Text.Contains(')'))
+            {
+                vystup = spracovanie_zatvorky(textBox1.Text);
+            }
+            else
+            {
+                try
+                {
+                    vystup = math.Zpracovat_Vyraz(textBox1.Text);
+                }
+                catch
+                {
+                    MessageBox.Show("Chyba vstupu! Zkontrolujte znaménka, závorky a dělení nulou!", "Chyba!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
 
 
-			}
+            }
             if (vystup == "")
             {
                 return;
             }
-			if (vystup[0] == '+')
-			{
-				vystup = vystup.Remove(0, 1);
-				textBox1.Text = vystup;
-			}
-			else
-			{
-				textBox1.Text = vystup;
-			}
-		}
+            if (vystup[0] == '+')
+            {
+                vystup = vystup.Remove(0, 1);
+                textBox1.Text = vystup;
+            }
+            else
+            {
+                textBox1.Text = vystup;
+            }
+        }
 
-		/// <summary>
-		/// Výpočet tangens zadaného vstupu
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		protected void button14_Click(object sender, EventArgs e)
-		{
-			if (textBox1.Text.Length == 1)
-			{
-				return;
-			}
-			if (textBox1.Text == "")
-			{
-				return;
-			}
-			else
-			{
-				if (Vstup(textBox1.Text) == false)
-				{
-					return;
-				}
-			}
-			if (textBox1.Text.Contains('/') || textBox1.Text.Contains('*') || textBox1.Text.Contains('+') || textBox1.Text.Contains('-') || textBox1.Text.Contains('^'))
+        /// <summary>
+        /// Výpočet tangens zadaného vstupu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void button14_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text.Length == 0)
+            {
+                return;
+            }
+            if (textBox1.Text == "")
+            {
+                return;
+            }
+            else
+            {
+                if (Vstup(textBox1.Text) == false)
+                {
+                    return;
+                }
+            }
+            if (textBox1.Text.Contains('(') && textBox1.Text.Contains(')'))
+            {
+                double cislo =Convert.ToDouble(spracovanie_zatvorky(textBox1.Text));
+                try
+                {
+                    textBox1.Text = Convert.ToString(math.Tangens(cislo));
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Chyba: " + ex.Message, "Chyba", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                return;
+            }
+            if (textBox1.Text.Contains('/') || textBox1.Text.Contains('*') || textBox1.Text.Contains('+') || textBox1.Text.Contains('-') || textBox1.Text.Contains('^'))
 			{
 				string text = math.Zpracovat_Vyraz(textBox1.Text);
 				double cislo = Convert.ToDouble(text);
