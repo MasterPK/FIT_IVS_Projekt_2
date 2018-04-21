@@ -2,10 +2,10 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 #include <idp.iss>
 #define MyAppName "Kalkulaèka"
-#define MyAppVersion "0.1"
+#define MyAppVersion "RC1"
 #define MyAppPublisher "Pray4Kebab"
 #define MyAppURL "https://github.com/MasterPK/FIT_IVS_Projekt_2"
-#define MyAppExeName "IVS.exe"
+#define MyAppExeName Kalkulacka_RC1.exe"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application.
@@ -34,7 +34,7 @@ Name: "czech"; MessagesFile: "compiler:Languages\Czech.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "C:\Users\petrk\Documents\GitHub\FIT_IVS_Projekt_2\src\IVS\bin\Debug\IVS.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\petrk\Documents\GitHub\FIT_IVS_Projekt_2\src\IVS\bin\Debug\Kalkulacka_RC1.exe"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
