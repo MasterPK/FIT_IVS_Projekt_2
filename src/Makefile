@@ -12,4 +12,5 @@ help:
 	echo Cil pack zabali cely obsah adresare src do zip
 	echo Cil clean smaze spustitelne a objektove soubory
 clean:
-	rd .\IVS\bin .\IVS\obj /S /Q
+	rmdir IVS\bin IVS\obj /S /Q
+	rmdir /S /Q "Smerodatna odhylka\bin" "Smerodatna odhylka\obj"
