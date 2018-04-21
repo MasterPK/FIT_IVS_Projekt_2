@@ -10,12 +10,12 @@ namespace Smerodatna_odhylka
 	{
 		static void Main(string[] args)
 		{
-			Console.ReadLine();
+			string vstup = Console.ReadLine();
 			//Console.WriteLine(args.Length);
 			//Console.WriteLine("Vypocet odchylky\nZadejte cisla oddelena ';' napr: '1,1;2;3;4;5;6'");
 			//string text = Console.ReadLine();
 
-			if (args.Length < 1)
+			if (vstup.Length < 1)
 			{
 				Console.WriteLine("Chyba vstupu!", "Chyba");
 				return;
@@ -23,7 +23,8 @@ namespace Smerodatna_odhylka
 
 			List<double> pole = new List<double>();
 			int pocet_cisel = 0;
-			foreach (string x in args)
+			string[] tmp = vstup.Split(';');
+			foreach (string x in tmp)
 			{
 				try
 				{
@@ -47,7 +48,7 @@ namespace Smerodatna_odhylka
 			}
 			//Console.WriteLine("Odchylka = "+text);
 			//Console.WriteLine("Stisknutim jakekoliv klavesy ukoncite program...");
-			Console.ReadLine();
+			Console.Read();
 		}
 
 	}
