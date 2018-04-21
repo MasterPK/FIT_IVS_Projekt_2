@@ -504,7 +504,7 @@ namespace IVS
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		protected void Spusteni_testu_Click(object sender, EventArgs e)
+		protected void Spusteni_testu()
 		{
 			Form testy = new Testy();
 			testy.Show();
