@@ -73,7 +73,7 @@ namespace MathLibrary
 		/// <returns>Faktorial vstupu</returns>
 		public static int Faktorial(double a)
 		{
-			if (Test_Int(a) == false || a < 0)
+			if (Test_Int(a) == false || a < 0 || a>31)
 			{
 				throw new ArgumentException();
 			}
