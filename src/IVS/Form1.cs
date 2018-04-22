@@ -13,6 +13,7 @@ namespace IVS
 {
     public partial class Calculator : Form
     {
+		public int poc = 0;
         public Calculator()
         {
             InitializeComponent();
@@ -403,11 +404,20 @@ namespace IVS
             {
                 vystup = vystup.Remove(0, 1);
                 textBox1.Text = vystup;
-            }
+
+			}
             else
             {
                 textBox1.Text = vystup;
             }
+
+			label1.Text += vystup + "\n";
+			poc += 1;
+			if (poc == 4)
+			{
+				label1.Text = vystup + "\n";
+				poc = 1;
+			}
         }
 
         /// <summary>
@@ -609,6 +619,10 @@ namespace IVS
         {
             textBox1.Text = textBox1.Text + ";";
         }
-    }
+
+		private void label1_Click(object sender, EventArgs e)
+		{
+		}
+	}
 
 }
