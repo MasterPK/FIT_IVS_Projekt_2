@@ -56,8 +56,8 @@
 			this.button25 = new System.Windows.Forms.Button();
 			this.SO_button = new System.Windows.Forms.Button();
 			this.button26 = new System.Windows.Forms.Button();
-			this.label1 = new System.Windows.Forms.Label();
 			this.listBox1 = new System.Windows.Forms.ListBox();
+			this.button27 = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// button1
@@ -397,25 +397,26 @@
 			this.button26.UseVisualStyleBackColor = true;
 			this.button26.Click += new System.EventHandler(this.button26_Click);
 			// 
-			// label1
-			// 
-			this.label1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-			this.label1.Font = new System.Drawing.Font("MS Reference Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.label1.Location = new System.Drawing.Point(46, 79);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(234, 57);
-			this.label1.TabIndex = 29;
-			this.label1.Click += new System.EventHandler(this.label1_Click);
-			// 
 			// listBox1
 			// 
 			this.listBox1.FormattingEnabled = true;
-			this.listBox1.Location = new System.Drawing.Point(240, 51);
+			this.listBox1.Location = new System.Drawing.Point(46, 138);
 			this.listBox1.Name = "listBox1";
-			this.listBox1.Size = new System.Drawing.Size(120, 95);
+			this.listBox1.Size = new System.Drawing.Size(348, 303);
 			this.listBox1.TabIndex = 30;
+			this.listBox1.Visible = false;
 			this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
 			this.listBox1.DoubleClick += new System.EventHandler(this.listBox1_DoubleClick);
+			// 
+			// button27
+			// 
+			this.button27.Location = new System.Drawing.Point(284, 79);
+			this.button27.Name = "button27";
+			this.button27.Size = new System.Drawing.Size(75, 23);
+			this.button27.TabIndex = 31;
+			this.button27.Text = "button27";
+			this.button27.UseVisualStyleBackColor = true;
+			this.button27.Click += new System.EventHandler(this.button27_Click);
 			// 
 			// Calculator
 			// 
@@ -424,8 +425,8 @@
 			this.BackColor = System.Drawing.SystemColors.Control;
 			this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
 			this.ClientSize = new System.Drawing.Size(441, 448);
+			this.Controls.Add(this.button27);
 			this.Controls.Add(this.listBox1);
-			this.Controls.Add(this.label1);
 			this.Controls.Add(this.button26);
 			this.Controls.Add(this.SO_button);
 			this.Controls.Add(this.button25);
@@ -494,8 +495,8 @@
         private System.Windows.Forms.Button button25;
         private System.Windows.Forms.Button SO_button;
         private System.Windows.Forms.Button button26;
-		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.ListBox listBox1;
+		private System.Windows.Forms.Button button27;
 	}
 }
 

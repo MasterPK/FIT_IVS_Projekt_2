@@ -633,7 +633,26 @@ namespace IVS
 
 		private void listBox1_DoubleClick(object sender, EventArgs e)
 		{
-			textBox1.Text = listBox1.SelectedItem.ToString().Split('=')[0];
+			try
+			{
+				textBox1.Text = listBox1.SelectedItem.ToString().Split('=')[0];
+			}
+			catch
+			{
+
+			}
+		}
+
+		private void button27_Click(object sender, EventArgs e)
+		{
+			if (listBox1.Visible)
+			{
+				listBox1.Visible = false;
+			}
+			else
+			{
+				listBox1.Visible = true;
+			}
 		}
 	}
 
