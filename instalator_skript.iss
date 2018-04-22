@@ -5,7 +5,7 @@
 #define MyAppVersion "RC1"
 #define MyAppPublisher "Pray4Kebab"
 #define MyAppURL "https://github.com/MasterPK/FIT_IVS_Projekt_2"
-#define MyAppExeName MyAppName+"_"+MyAppVersion+".exe"
+#define MyAppExeName MyAppName+".exe"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application.
@@ -26,6 +26,9 @@ InfoAfterFile=C:\Users\petrk\Desktop\README.txt
 OutputBaseFilename=setup_kalkulacka
 Compression=lzma
 SolidCompression=yes
+
+[Setup]
+SetupIconFile=MyProgSetup.ico
 
 [Languages]
 Name: "czech"; MessagesFile: "compiler:Languages\Czech.isl"
