@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 #include <idp.iss>
 #define MyAppName "Kalkulacka"
-#define MyAppVersion "RC1"
+#define MyAppVersion "1_FINAL"
 #define MyAppPublisher "Pray4Kebab"
 #define MyAppURL "https://github.com/MasterPK/FIT_IVS_Projekt_2"
 #define MyAppExeName MyAppName+".exe"
@@ -23,7 +23,7 @@ DefaultDirName={pf}\{#MyAppName}
 DisableProgramGroupPage=yes
 LicenseFile=C:\Users\petrk\Desktop\LICENSE.txt
 InfoAfterFile=C:\Users\petrk\Desktop\README.txt
-OutputBaseFilename=setup_kalkulacka
+OutputBaseFilename=setup_{#MyAppName}_v{#MyAppVersion}
 Compression=lzma
 SolidCompression=yes
 
