@@ -361,6 +361,7 @@ namespace IVS
                 }
             }
             string vystup = "";
+			string vstup = textBox1.Text;
             if (textBox1.Text.Contains('√'))
             {
                 for (int i = 0; i < textBox1.Text.Length; i++)
@@ -410,14 +411,15 @@ namespace IVS
             {
                 textBox1.Text = vystup;
             }
-
+			listBox1.Items.Add(vstup+"="+vystup);
+			/*
 			label1.Text += vystup + "\n";
 			poc += 1;
 			if (poc == 4)
 			{
 				label1.Text = vystup + "\n";
 				poc = 1;
-			}
+			}*/
         }
 
         /// <summary>
@@ -622,6 +624,16 @@ namespace IVS
 
 		private void label1_Click(object sender, EventArgs e)
 		{
+		}
+
+		private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void listBox1_DoubleClick(object sender, EventArgs e)
+		{
+			textBox1.Text = listBox1.SelectedItem.ToString().Split('=')[0];
 		}
 	}
 
