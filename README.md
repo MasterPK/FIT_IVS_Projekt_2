@@ -2,9 +2,7 @@
 
 Jednoduchá kalkulačka, která zvládá základní matematické operace s prioritami. Jako bonus zvládá funkci tangens a směrodatnou odchylku.
 
-[Nejnovější verze ke stažení zde](https://github.com/MasterPK/FIT_IVS_Projekt_2/releases/tag/0.1)
-
-Vývoj stále probíhá...
+[Finální verze ke stažení zde](https://github.com/MasterPK/FIT_IVS_Projekt_2/releases/tag/v1)
 
 Prostredi
 ---------
