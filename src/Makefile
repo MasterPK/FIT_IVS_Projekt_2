@@ -1,9 +1,9 @@
 all:
 	resources\MSBuild.exe
 run:
-	IVS\bin\Debug\IVS.exe
+	IVS\bin\Debug\Kalkulacka.exe
 pack:
-	resources\zip.exe -r src.zip *
+	resources\zip.exe -r src.zip ..\*
 help:
 	echo Makefile pro aplikaci Kalkulacka
 	echo Makefile nepotrebuje pro praci zadne zavislosti, vse potrebne je obsazeno ve slozce resources
@@ -13,4 +13,4 @@ help:
 	echo Cil clean smaze spustitelne a objektove soubory
 clean:
 	rmdir IVS\bin IVS\obj /S /Q
-	rmdir /S /Q "Smerodatna odhylka\bin" "Smerodatna odhylka\obj"
+	rmdir "Smerodatna odhylka\bin" "Smerodatna odhylka\obj" /S /Q
