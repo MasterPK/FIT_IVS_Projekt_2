@@ -572,11 +572,7 @@ namespace IVS
 		}
 
 		/// <summary>
-<<<<<<< HEAD
-		/// Pocita smerodnou odchylku, zpracuje data ze vstupu
-=======
 		/// výpočet smerodatnej odchylky zo vstupu
->>>>>>> 0ba68e6724892d0a025f47b5feece2f64e0b3237
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
