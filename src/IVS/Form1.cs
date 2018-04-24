@@ -31,9 +31,6 @@ namespace IVS
         protected void Calculator_Load(object sender, EventArgs e)
         {
             this.ActiveControl = textBox1;
-            //MessageBox.Show(math.Zpracovat_Vyraz("-1-1-1+1+1+1+5*5-5*5*-5/+1/-5"));//==0 FUNGUJE!!! 
-            //double[] pole = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-            //MessageBox.Show(odchylka_s(10,pole).ToString());
         }
 
         /// <summary>
@@ -416,14 +413,6 @@ namespace IVS
                 textBox1.Text = vystup;
             }
 			listBox1.Items.Add(vstup+"="+vystup);
-			/*
-			label1.Text += vystup + "\n";
-			poc += 1;
-			if (poc == 4)
-			{
-				label1.Text = vystup + "\n";
-				poc = 1;
-			}*/
         }
 
         /// <summary>
@@ -583,7 +572,11 @@ namespace IVS
 		}
 
 		/// <summary>
+<<<<<<< HEAD
 		/// Pocita smerodnou odchylku, zpracuje data ze vstupu
+=======
+		/// výpočet smerodatnej odchylky zo vstupu
+>>>>>>> 0ba68e6724892d0a025f47b5feece2f64e0b3237
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
@@ -625,21 +618,26 @@ namespace IVS
 			
 
 		}
-
+		/// <summary>
+		/// vloženie ';' do vstupu
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
         protected void button26_Click(object sender, EventArgs e)
         {
             textBox1.Text = textBox1.Text + ";";
         }
-
-		private void label1_Click(object sender, EventArgs e)
-		{
-		}
 
 		private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
 		{
 
 		}
 
+		/// <summary>
+		/// zápis do hystórie
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void listBox1_DoubleClick(object sender, EventArgs e)
 		{
 			try
@@ -651,7 +649,11 @@ namespace IVS
 
 			}
 		}
-
+		/// <summary>
+		/// visibilita textboxu histórie
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void button27_Click(object sender, EventArgs e)
 		{
 			if (listBox1.Visible)
