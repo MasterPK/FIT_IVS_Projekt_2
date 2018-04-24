@@ -543,6 +543,12 @@ namespace IVS
 			{
 				button22.PerformClick();
 			}
+			if (e.KeyData == (Keys.Control | Keys.V))
+				(sender as TextBox).Paste();
+			if (e.KeyData == (Keys.Control | Keys.C))
+				(sender as TextBox).Copy();
+			if (e.KeyData == (Keys.Control | Keys.A))
+				(sender as TextBox).SelectAll();
 
 		}
 
@@ -555,6 +561,7 @@ namespace IVS
 		/// <param name="e"></param>
 		protected void textBox1_KeyPress(object sender, KeyPressEventArgs e)
 		{
+			
 			String sKeys = "1234567890+-*/^(),!\b;";
 			if (!sKeys.Contains(e.KeyChar.ToString().ToUpper()))
 				e.Handled = true;
