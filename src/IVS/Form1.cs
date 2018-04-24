@@ -446,7 +446,15 @@ namespace IVS
             }
             if (textBox1.Text.Contains('(') && textBox1.Text.Contains(')'))
             {
-                double cislo =Convert.ToDouble(spracovanie_zatvorky(textBox1.Text));
+				double cislo;
+				try
+				{
+					cislo = Convert.ToDouble(spracovanie_zatvorky(textBox1.Text));
+				}
+				catch
+				{
+					return;
+				}
                 try
                 {
                     textBox1.Text = Convert.ToString(math.Tangens(cislo));
