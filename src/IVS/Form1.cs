@@ -299,7 +299,13 @@ namespace IVS
         /// <returns></returns>
         protected bool Vstup(string vstup)
         {
-            int zatL = 0;
+			bool result = vstup.Any(x => !char.IsLetter(x));
+			if(result == false)
+			{
+				MessageBox.Show("Chyba vstupu! Vstup obsahuje písmena!", "Chyba!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				return false;
+			}
+			int zatL = 0;
             int zatP = 0;
             for (int j = 0; j < vstup.Length; j++)
             {
