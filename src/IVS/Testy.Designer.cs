@@ -1,5 +1,8 @@
 ﻿namespace IVS
 {
+	/// <summary>
+	/// Trida testu
+	/// </summary>
     partial class Testy
     {
         /// <summary>

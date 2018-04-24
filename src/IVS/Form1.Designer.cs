@@ -1,5 +1,8 @@
 ﻿namespace IVS
 {
+	/// <summary>
+	/// GUI Kalkulacky
+	/// </summary>
 	partial class Calculator
 	{
 		/// <summary>

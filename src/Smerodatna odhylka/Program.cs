@@ -6,6 +6,9 @@ using MathLibrary;
 
 namespace Smerodatna_odhylka
 {
+	/// <summary>
+	/// Program pro vypocet smerodatne odchylky z cisel nactenych na stdin
+	/// </summary>
 	class Program
 	{
 		static void Main(string[] args)

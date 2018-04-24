@@ -6,6 +6,9 @@ using System.Windows.Forms;
 
 namespace IVS
 {
+	/// <summary>
+	/// Hlavni vstupni bod aplikace
+	/// </summary>
 	static class Program
 	{
 		/// <summary>

@@ -11,6 +11,9 @@ using MathLibrary;
 
 namespace IVS
 {
+	/// <summary>
+	/// Trida testu
+	/// </summary>
     public partial class Testy : Form
     { //Kod pro testy
 

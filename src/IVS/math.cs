@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace MathLibrary
 {
+	/// <summary>
+	/// Trida math provadejici zakladni a porkocile mat operace. Umi i zpracovat vyraz bez zavorek.
+	/// </summary>
 	public class math
 	{
 		/// <summary>

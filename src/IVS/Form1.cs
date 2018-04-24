@@ -11,9 +11,13 @@ using MathLibrary;
 
 namespace IVS
 {
+	/// <summary>
+	/// Hlavni form aplikace
+	/// </summary>
     public partial class Calculator : Form
     {
 		public int poc = 0;
+		// init komponenty
         public Calculator()
         {
             InitializeComponent();
@@ -578,6 +582,11 @@ namespace IVS
 			textBox1.Text = textBox1.Text + "!";
 		}
 
+		/// <summary>
+		/// Pocita smerodnou odchylku, zpracuje data ze vstupu
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		protected void SO_button_Click(object sender, EventArgs e)
 		{
 			if (textBox1.TextLength < 1)
