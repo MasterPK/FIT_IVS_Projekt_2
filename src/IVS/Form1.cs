@@ -16,8 +16,9 @@ namespace IVS
 	/// </summary>
     public partial class Calculator : Form
     {
-		public int poc = 0;
-		// init komponenty
+		/// <summary>
+		/// Init komponent
+		/// </summary>
         public Calculator()
         {
             InitializeComponent();
@@ -507,8 +508,6 @@ namespace IVS
 		/// <summary>
 		/// Spusti testy
 		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
 		protected void Spusteni_testu()
 		{
 			Form testy = new Testy();

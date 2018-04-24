@@ -17,6 +17,7 @@ var searchData=
   ['button23_5fclick',['button23_Click',['../class_i_v_s_1_1_calculator.html#a429d9cfc3bda07afb25f3acdec8894b2',1,'IVS::Calculator']]],
   ['button24_5fclick',['button24_Click',['../class_i_v_s_1_1_calculator.html#a35aa433b5f36197331eecc260dc495f3',1,'IVS::Calculator']]],
   ['button25_5fclick',['button25_Click',['../class_i_v_s_1_1_calculator.html#a59df8db86ef51c3c105143abd36ae3da',1,'IVS::Calculator']]],
+  ['button26_5fclick',['button26_Click',['../class_i_v_s_1_1_calculator.html#a50b09cd75e77f655a9e082b8df2ad4c5',1,'IVS::Calculator']]],
   ['button2_5fclick',['button2_Click',['../class_i_v_s_1_1_calculator.html#aa6a17fb7e856187dfd9b8964e67e2f57',1,'IVS::Calculator']]],
   ['button3_5fclick',['button3_Click',['../class_i_v_s_1_1_calculator.html#a4478858fe2f745473de5b68a7a57b2f3',1,'IVS::Calculator']]],
   ['button4_5fclick',['button4_Click',['../class_i_v_s_1_1_calculator.html#ac1763f222a684150c84c3fe98c0820e1',1,'IVS::Calculator']]],
