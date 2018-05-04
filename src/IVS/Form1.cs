@@ -280,7 +280,11 @@ namespace IVS
                     }
                 }
             }
-            try
+			if (Vstup(text) == false)
+			{
+				return textBox1.Text; 
+			}
+			try
             {
                 text = math.Zpracovat_Vyraz(text);
             }
@@ -304,6 +308,17 @@ namespace IVS
 			{
 				MessageBox.Show("Chyba vstupu! Vstup obsahuje písmena!", "Chyba!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return false;
+			}
+			for(int g = 0; g < vstup.Length; g++)
+			{
+				if (vstup[g] == '/' && g != vstup.Length - 1)
+				{
+					if(((vstup[g+1] == '+' || vstup[g + 1] == '-') && vstup[g + 2] == '0') || vstup[g + 1] == '0')
+					{
+						MessageBox.Show("Chyba vstupu! Delenie nulou!", "Chyba!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+						return false;
+					}
+				}
 			}
 			int zatL = 0;
             int zatP = 0;
